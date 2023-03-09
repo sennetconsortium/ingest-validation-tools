@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Union
+from enum import Enum
 
 import frictionless
 
@@ -8,14 +9,19 @@ import frictionless
 from ingest_validation_tools.check_factory import make_checks
 
 
-def get_table_errors(tsv: str, schema: dict) -> List[str]:
+class ReportType(Enum):
+    STR = 1
+    JSON = 2
+
+
+def get_table_errors(tsv: str, schema: dict, report_type: ReportType = ReportType.STR) -> List:
     tsv_path = Path(tsv)
     pre_flight_errors = _get_pre_flight_errors(tsv_path, schema=schema)
     if pre_flight_errors:
         return pre_flight_errors
 
-    assert frictionless.__version__ == '4.0.0',\
-        'Upgrade dependencies: "pip install -r requirements.txt"'
+    # assert frictionless.__version__ == '4.40.9',\
+    #     'Upgrade dependencies: "pip install -r requirements.txt"'
 
     report = frictionless.validate(
         tsv_path, schema=schema,
@@ -31,7 +37,7 @@ def get_table_errors(tsv: str, schema: dict) -> List[str]:
     assert 'errors' in task, f'"tasks" missing "errors": {report}'
 
     return [
-        _get_message(error)
+        _get_message(error, report_type)
         for error in task['errors']
     ]
 
@@ -72,7 +78,8 @@ def _get_pre_flight_errors(tsv_path: Path, schema: dict) -> Optional[List[str]]:
     return None
 
 
-def _get_message(error: Dict[str, str]) -> str:
+def _get_message(error: Dict[str, str],
+                 report_type: ReportType = ReportType.STR) -> Union[str, Dict]:
     '''
     >>> print(_get_message({
     ...     'cell': 'bad-id',
@@ -88,14 +95,24 @@ def _get_message(error: Dict[str, str]) -> str:
     On row 2, column "orcid_id", value "bad-id" fails because constraint "pattern" is "fake-re"
 
     '''
+
+    return_str = report_type is ReportType.STR
     if 'code' in error and error['code'] == 'missing-label':
-        return 'Bug: Should have been caught pre-flight. File an issue.'
+        msg = 'Bug: Should have been caught pre-flight. File an issue.'
+        return msg if return_str else _get_json(msg)
     if 'rowPosition' in error and 'fieldName' in error and 'cell' in error and 'note' in error:
-        return (
-            f'On row {error["rowPosition"]}, column "{error["fieldName"]}", '
-            f'value "{error["cell"]}" fails because {error["note"]}'
-        )
-    return error['message']
+        msg = f'value "{error["cell"]}" fails because {error["note"]}'
+        full_msg = f'On row {error["rowPosition"]}, column "{error["fieldName"]}", {msg}'
+        return full_msg if return_str else _get_json(msg, error["rowPosition"], error["fieldName"])
+    return error['message'] if return_str else _get_json(error['message'])
+
+
+def _get_json(error: str, row: str = None, column: str = None) -> Dict[str, Optional[str]]:
+    return {
+        'column': column,
+        'error': error,
+        'row': row,
+    }
 
 
 if __name__ == "__main__":
