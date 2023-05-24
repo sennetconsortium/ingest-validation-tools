@@ -29,20 +29,20 @@ fields:
     sequence_limit: 3
     forbid_na: true
 - name: donor_id
-  description: HuBMAP Display ID of the donor of the assayed tissue.
+  description: SenNet ID of the source (whole organism) of the assayed tissue.
   constraints:
-    pattern: '[A-Z]+[0-9]+'
+    pattern: '[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}'
     required: true
-  example: ABC123
+  example: SNT123.ABCD.567
   custom_constraints:
     forbid_na: true
   type: string
 - name: tissue_id
-  description: HuBMAP Display ID of the assayed tissue.
+  description: SenNet ID of the assayed tissue.
   constraints:
-    pattern: (([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)(,([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)*
+    pattern: '[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}'
     required: true
-  example: ABC123-BL-1-2-3_456
+  example: SNT890.EFGH.321
   custom_constraints:
     forbid_na: true
   type: string
