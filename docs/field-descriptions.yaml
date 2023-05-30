@@ -407,7 +407,7 @@ suspension_enriched_target: If the suspension was enriched, then this is the tar
 suspension_entity: The type of single cell entity derived from isolation protocol.
 suspension_entity_number: Total number of cell/nuclei yielded post dissociation and
   enrichment.
-tissue_id: HuBMAP Display ID of the assayed tissue.
+tissue_id: SenNet ID of the assayed tissue.
 total_sections_analyzed: The number of sections used for analyzing microCT or OCT
   images
 transposition_input: Number of cell/nuclei input to the assay.

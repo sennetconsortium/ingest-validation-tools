@@ -1,12 +1,12 @@
 # Changelog
-## v0.0.16 - in progress
--updated issue templates.
--removed donor metadata spec (had not been in use)
-- Added examples for fields with pattern constraint
-- Replaced `preparation_temperature` with `preparation_condition` and updated associated enumerations in the sample-section, sample-block, and sample-suspension schemas
-- Replaced `storage_temperature` with `storage_method` and updated associated enumerations in the sample-section, sample-block, and sample-suspension schemas
+## v0.0.17 - 2023-03-03
+- Fixed formatting of listed enums in donor-v0.yaml to allow validation to run without 500 error
+- Update to frictionless 4.40.9 for better error message formatting
 
-## v0.0.15 - 2023-04-04
+## v0.0.16 - 2023-02-14
+- Added ability to specify report type, whether str or json. Default is str.
+
+## v0.0.15 - in progress
 - Versioned directory structure schema
 - Added MxIF directory structure schema.
 - Added Lightsheet version 1.
@@ -31,10 +31,8 @@
 - Update `preparation_maldi_matrix` in imaging MS schema to from enum to open string field.
 - Expand file types for stained to not be vendor locked to Leica's `.scn`. Include vendor-neutral `.tiff`.
 - Replaced enum `Multiplexed Ion Beam Imaging` with `MIBI` in src
-- Added `raw` as a potential directory to look for `segmentation.json` file for `CODEX`.
-- Updated error messages to be less programmer centric.
-- Updated ims-v2 spec to include DESI as an acceptable enumeration for ms_source.
-- Upgraded CI python definition to 3.9.
+- Added `raw` as a potential directory to look for `segmentation.json` file for `CODEX`
+- Updated `donor_id` and `tissue_id` regex to match SenNet IDs
 
 ## v0.0.14 - 2022-06-23
 - bump tzingo -> 1.2.10 (dependabot)
