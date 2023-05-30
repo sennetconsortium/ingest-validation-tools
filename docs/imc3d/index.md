@@ -118,20 +118,20 @@ Free-text description of this assay.
 
 <a name="donor_id"></a>
 ##### [`donor_id`](#donor_id)
-HuBMAP Display ID of the donor of the assayed tissue. Example: `ABC123`.
+SenNet ID of the source (whole organism) of the assayed tissue. Example: `SNT123.ABCD.567`.
 
 | constraint | value |
 | --- | --- |
-| pattern (regular expression) | <code>[A-Z]+[0-9]+</code> |
+| pattern (regular expression) | <code>[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}</code> |
 | required | `True` |
 
 <a name="tissue_id"></a>
 ##### [`tissue_id`](#tissue_id)
-HuBMAP Display ID of the assayed tissue. Example: `ABC123-BL-1-2-3_456`.
+SenNet ID of the assayed tissue. Example: `SNT890.EFGH.321`.
 
 | constraint | value |
 | --- | --- |
-| pattern (regular expression) | <code>(([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)(,([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)*</code> |
+| pattern (regular expression) | <code>[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}</code> |
 | required | `True` |
 
 <a name="execution_datetime"></a>
