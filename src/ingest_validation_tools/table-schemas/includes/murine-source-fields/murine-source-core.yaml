@@ -1,0 +1,28 @@
+fields:
+- name: strain
+  description: Jackson Labs nomenclature. When mutant alleles are part of the strain name, use "<" and ">" to indicate the superscripted alleles. For example, C57BL/6J-KitW-39J should be entered as "C57BL/6J-Kit<W-39J>", where "W-39J" would be the portion of the string displayed as superscripted text. For further information, see the "Quick Guide to Mouse Nomenclature" (https://resources.jax.org/guides/quick-guide-to-mouse-nomenclature).
+  constraints:
+    required: True
+- name: strain_rrid
+  description: The Research Resource Identifier (RRID) (https://scicrunch.org/resources/data/source/nlx_154697-1/search) for the strain. An example is 'RRID:MGI:3713213'
+  constraints:
+    required: True
+- name: sex
+  description: The sex of the mouse.
+  type: text
+  constraints:
+    required: True
+    enum:
+    - M
+    - F
+- name: is_embryo
+  description: Is the source an embryo? Use either 'True' or 'false'.
+  type: boolean
+  constraints:
+    required: True
+- name: date_of_birth_or_fertilization
+  description: The date when the mouse/embryo was born/fertilized. If the hours/minutes are not known, use '00:00'.
+  type: datetime
+  format: "%Y-%m-%d %H:%M"
+  constraints:
+    required: True
