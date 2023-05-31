@@ -1,0 +1,3 @@
+fields:
+# include: ../includes/murine-source-fields/murine-source-core.yaml
+# include: ../includes/murine-source-fields/murine-source-additional.yaml
