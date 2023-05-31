@@ -1,4 +1,8 @@
 # Changelog
+## v0.0.17 - in progress
+- Fixed formatting of listed enums in donor-v0.yaml to allow validation to run without 500 error
+- Update to frictionless 4.40.9 for better error message formatting
+
 ## v0.0.16 - in progress
 -updated issue templates.
 -removed donor metadata spec (had not been in use)
