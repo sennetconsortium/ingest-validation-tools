@@ -23,8 +23,8 @@ Metadata TSV Errors:
         - (raw|src_.*)/[cC]yc.*_reg.*/.*_Z.*_CH.*\.tif.
         - (raw|src_[^/]*)/[Ee]xperiment\.json.
       row 2, contributors examples/dataset-examples/bad-codex-data/upload/contributors.tsv:
-      - 'On row 2, column "orcid_id", value "bad-id" fails because it does not match
-        the expected pattern. Example: 0000-0002-8928-741X.'
+      - On row 2, column "orcid_id", value "bad-id" fails because it does not match
+        the expected pattern.
       - 'On row 4, column "affiliation", value "somewhere3" fails because there is
         a run of 3 sequential items: Limit is 3. If correct, reorder rows.'
       row 2, antibodies examples/dataset-examples/bad-codex-data/upload/antibodies.tsv: "Invalid\

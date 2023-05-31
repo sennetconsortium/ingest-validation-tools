@@ -16,7 +16,7 @@ fields:
     - M
     - F
 - name: is_embryo
-  description: Is the source an embryo? Use either 'True' or 'false'.
+  description: Is the source an embryo? Use either 'True' or 'False'.
   type: boolean
   constraints:
     required: True
@@ -26,3 +26,29 @@ fields:
   format: "%Y-%m-%d %H:%M"
   constraints:
     required: True
+- name: is_deceased
+  description: Is the source deceased? Use either 'True' or 'False'.
+  type: boolean
+  constraints:
+    required: True
+- name: date_of_death
+  description: The date when the mouse/embryo died. If the hours/minutes are not known, use '00:00'.
+  type: datetime
+  format: "%Y-%m-%d %H:%M"
+  constraints:
+    required: False
+- name: euthanization_method
+  description: If the source was euthanized, select the method of euthanization.
+  type: test
+  constraints:
+    required: False
+    enum:
+    - Carbon dioxide asphixiation
+    - Inhaled anesthetic agents
+    - Injected anesthetic agents
+    - Cervical dislocation
+    - Decapitation
+    - Hypothermia
+    - Rapid freezing
+    - Other
+

@@ -2,10 +2,10 @@
 Metadata TSV Errors:
   examples/dataset-examples/bad-tsv-formats/upload/codex-metadata.tsv (as codex):
     Internal:
-    - 'On row 2, column "donor_id", value "not-uuid" fails because it does not match
-      the expected pattern. Example: ABC123.'
-    - 'On row 2, column "tissue_id", value "not-uuid" fails because it does not match
-      the expected pattern. Example: ABC123-BL-1-2-3_456.'
+    - On row 2, column "donor_id", value "not-uuid" fails because it does not match
+      the expected pattern.
+    - On row 2, column "tissue_id", value "not-uuid" fails because it does not match
+      the expected pattern.
     - On row 2, column "execution_datetime", value "not-time" fails because it is
       not in the format YYYY-MM-DD Hour:Minute.
     - On row 2, column "protocols_io_doi", value "10\.17504/protocols.io.menc3de"

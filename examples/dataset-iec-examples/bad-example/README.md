@@ -1,4 +1,4 @@
-In metadata.tsv (as scatacseq): Internal: On row 2, column "donor_id", value "bad-donor-id" fails because it does not match the expected pattern. Example: ABC123.
+In metadata.tsv (as scatacseq): Internal: On row 2, column "donor_id", value "bad-donor-id" fails because it does not match the expected pattern.
 In metadata.tsv (as scatacseq): Internal: On row 2, column "protocols_io_doi", value "10.17504/fake" fails because it is an invalid DOI.
 In metadata.tsv (as scatacseq): Internal: On row 2, column "sc_isolation_protocols_io_doi", value "10.17504/fake" fails because it is an invalid DOI.
 In metadata.tsv (as scatacseq): Internal: On row 2, column "library_construction_protocols_io_doi", value "10.17504/fake" fails because it is an invalid DOI.

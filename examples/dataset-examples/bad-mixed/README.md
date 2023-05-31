@@ -2,8 +2,8 @@
 Metadata TSV Errors:
   examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv (as codex):
     Internal:
-    - 'On row 2, column "donor_id", value "-INVALID-" fails because it does not match
-      the expected pattern. Example: ABC123.'
+    - On row 2, column "donor_id", value "-INVALID-" fails because it does not match
+      the expected pattern.
     External:
       row 2, data examples/dataset-examples/bad-mixed/upload/bad-shared-dataset:
         Not allowed:
@@ -20,8 +20,8 @@ Metadata TSV Errors:
         does not exist.
   examples/dataset-examples/bad-mixed/upload/scatacseq-metadata.tsv (as scatacseq):
     Internal:
-    - 'On row 2, column "donor_id", value "-INVALID-" fails because it does not match
-      the expected pattern. Example: ABC123.'
+    - On row 2, column "donor_id", value "-INVALID-" fails because it does not match
+      the expected pattern.
     - On row 2, column "sc_isolation_protocols_io_doi", value "" fails because it
       must be filled out.
     - On row 2, column "library_construction_protocols_io_doi", value "" fails because

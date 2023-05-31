@@ -4,8 +4,8 @@ Metadata TSV Errors:
     Internal:
     - On row 2, column "operator", value "n/a" fails because "N/A" fields should just
       be left empty.
-    - 'On row 3, column "donor_id", value "missing-datapath" fails because it does
-      not match the expected pattern. Example: ABC123.'
+    - On row 3, column "donor_id", value "missing-datapath" fails because it does
+      not match the expected pattern.
     - On row 3, column "data_path", value "" fails because it must be filled out.
     External:
       row 2, data examples/dataset-examples/bad-missing-data/upload/dataset-1:
