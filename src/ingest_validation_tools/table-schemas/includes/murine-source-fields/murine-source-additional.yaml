@@ -1,0 +1,76 @@
+fields:
+- name: local_lifespan_data
+  description: A free text description of how long mice live within the local environment. It is recommended to provide the median or maximum values for murine lifespans.
+  type: text
+  constraints:
+    required: False
+- name: room_health_status
+  description: A description of the pathogen and opportunist exclusion level of the room where the source is housed.
+  type: text
+  constraints:
+    required: False
+    enum:
+    - Pathogen free
+    - Pathogen and opportunist free
+    - Other
+- name: room_temperature
+  description: The temperature value in Celsius of the room where the source is housed. An example is "23".
+  type: number
+  constraints:
+    required: False
+- name: rack_setup
+  description: The rack setup type in which the source is housed.
+  type: text
+  constraints:
+    required: False
+    enum:
+    - Biocontainment
+    - Ventilated
+    - Micro-Isolator
+    - Conventional
+- name: light_cycle
+  description: The light cycle in the room where the source is housed. "Standard/default" refers to 12-hour photoperiods (e.g., lights on at 7:00 AM, lights off at 7:00 PM). "Longer photoperiods" refers to 14-hour photoperiods (e.g., lights on at 7:00 AM, lights off at 9:00 PM). "Reverse lightcycles" means that the the timing of the 12-hour photoperiod is reversed (.e.g, lights on at 7:00 PM, lights off at 7:00 AM).
+  constraints:
+    required: False
+    enum:
+    - Standard/default
+    - Longer photoperiods
+    - Reverse light cycles
+- name: bedding
+  description: The type of cage bedding in the cage where the source is housed.
+  type: text
+  constraints:
+    required: False
+    enum:
+    - Aspen chip
+    - Aspen shaving
+    - Pine chip
+    - Pine shaving
+    - 1/4-inch corncob
+    - 1/4-inch pelleted cellulose
+    - Refined virgin diced cellulose
+    - Non-contact cage board
+    - Wire mesh
+    - Other
+- name: diet
+  description: A free text description of the source's diet.
+  type: text
+  contraints:
+    required: False
+- name: water_source
+  description: A free text description of the source's water supply, including any treatments to the water. 
+  type: text
+  constraints:
+    required: False
+- name: cage_enhancements
+  description: Environmental enrichments present in the source’s cage.
+  type: text
+  constraints:
+    required: False
+    enum:
+    - Nestlets
+    - Nest boxes/shelters
+    - Shelter tubes
+    - Wooden chew sticks
+    - Nylon bones
+    - Other 

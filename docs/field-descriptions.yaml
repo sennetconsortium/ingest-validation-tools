@@ -40,6 +40,7 @@ assay_type: The specific type of assay being executed.
 bead_barcode_offset: Position(s) in the read at which the bead barcode starts
 bead_barcode_read: Which read file contains the bead barcode
 bead_barcode_size: Length of the bead barcode in base pairs
+bedding: The type of cage bedding in the cage where the source is housed.
 bulk_atac_cell_isolation_protocols_io_doi: 'Link to a protocols document answering
   the question: How was tissue stored and processed for cell/nuclei isolation'
 bulk_rna_isolation_protocols_io_doi: 'Link to a protocols document answering the question:
@@ -52,6 +53,7 @@ bulk_rna_yield_value: 'RNA (ng) per Weight of Tissue (mg). Answer the question: 
   RNA? Calculate the yield by dividing total RNA isolated by amount of tissue used
   to isolate RNA from (ng/mg).'
 bulk_transposition_input_number_nuclei: A number (no comma separators)
+cage_enhancements: "Environmental enrichments present in the source\u2019s cage."
 ce_background_electrolyte: Chemical composition of the background electrolyte that
   fills the separation capillary (e.g. "3% acetic acid").
 ce_capillary_coating: Treatment of surface of separation capillary. Capillary coating
@@ -106,6 +108,7 @@ desi_solvent: Solvent composition for conducting nanospray desorption electrospr
   ionization (nanoDESI) or desorption electrospray ionization (DESI).
 desi_solvent_flow_rate: The rate of flow of the solvent into a spray.
 desi_solvent_flow_rate_unit: Units of the rate of solvent flow.
+diet: A free text description of the source's diet.
 dilution: Antibody solutions may be diluted according to the experimental protocol.
 dms: Was differential mobility spectrometry used in this assay?
 dna_assay_input_unit: Units of DNA input into library preparation
@@ -211,6 +214,14 @@ library_layout: Whether the library was generated for single-end or paired end s
 library_pcr_cycles: Number of PCR cycles to amplify cDNA
 library_pcr_cycles_for_sample_index: Number of PCR cycles performed for library indexing
 library_preparation_kit: Reagent kit used for library preparation
+light_cycle: The light cycle in the room where the source is housed. "Standard/default"
+  refers to 12-hour photoperiods (e.g., lights on at 7:00 AM, lights off at 7:00 PM).
+  "Longer photoperiods" refers to 14-hour photoperiods (e.g., lights on at 7:00 AM,
+  lights off at 9:00 PM). "Reverse lightcycles" means that the the timing of the 12-hour
+  photoperiod is reversed (.e.g, lights on at 7:00 PM, lights off at 7:00 AM).
+local_lifespan_data: A free text description of how long mice live within the local
+  environment. It is recommended to provide the median or maximum values for murine
+  lifespans.
 lot_number: 'The lot# is specific to the vendor. (eg: Abcam lot# GR3238979-1)'
 mass_resolving_power: "The MS1 resolving power defined as m/\u2206m where \u2206m\
   \ is the FWHM for a given peak with a specified m/z (m). (unitless)"
@@ -305,6 +316,7 @@ quality_criteria: 'For example, RIN: 8.7. For suspensions, measured by visual in
   or no cells. This can be captured at a high level. "OK" or "not OK", or with more
   specificity such as "debris", "clump", "low clump".'
 quality_view: The quality of the acquired ultrasound images.
+rack_setup: The rack setup type in which the source is housed.
 range_z_unit: The unit of range_z_value.
 range_z_value: The total range of the z axis.
 reagent_prep_protocols_io_doi: DOI for protocols.io referring to the protocol for
@@ -326,6 +338,10 @@ roi_description: A description of the region of interest (ROI) captured in the i
 roi_id: Multiple images (1-n) are acquired from regions of interest (ROI1, ROI2, ROI3,
   etc) on a slide. The roi_id is a number from 1-n representing the ROI captured on
   a slide.
+room_health_status: A description of the pathogen and opportunist exclusion level
+  of the room where the source is housed.
+room_temperature: The temperature value in Celsius of the room where the source is
+  housed. An example is "23".
 rr_id: The rr_id is a unique antibody identifier that comes from the Antibody Registry
   (https://antibodyregistry.org).
 sample_id: (No description for this field was supplied.)
@@ -407,7 +423,7 @@ suspension_enriched_target: If the suspension was enriched, then this is the tar
 suspension_entity: The type of single cell entity derived from isolation protocol.
 suspension_entity_number: Total number of cell/nuclei yielded post dissociation and
   enrichment.
-tissue_id: HuBMAP Display ID of the assayed tissue.
+tissue_id: SenNet ID of the assayed tissue.
 total_sections_analyzed: The number of sections used for analyzing microCT or OCT
   images
 transposition_input: Number of cell/nuclei input to the assay.
@@ -431,6 +447,8 @@ volume_value: The volume of a tissue block.
 warm_ischemia_time_unit: Time unit
 warm_ischemia_time_value: Time interval between cessation of blood flow and cooling
   to 4C.
+water_source: A free text description of the source's water supply, including any
+  treatments to the water.
 wavelength_unit: The unit of the wavelength value used to acquire OCT images (nm)
 wavelength_value: 'The value of the wavelength used to acquire OCT images (Example:
   787)'
