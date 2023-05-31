@@ -228,7 +228,7 @@ def get_is_assay(schema_name: str) -> bool:
     # TODO: read from file system... but larger refactor may make it redundant.
     return schema_name not in [
         'donor', 'sample', 'antibodies', 'contributors',
-        'sample-block', 'sample-section', 'sample-suspension'
+        'sample-block', 'sample-section', 'sample-suspension', 'murine-source'
     ]
 
 

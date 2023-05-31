@@ -46,6 +46,8 @@ bead_barcode_read:
 - dataset
 bead_barcode_size:
 - dataset
+bedding:
+- murine
 bulk_atac_cell_isolation_protocols_io_doi:
 - dataset
 bulk_rna_isolation_protocols_io_doi:
@@ -58,6 +60,8 @@ bulk_rna_yield_value:
 - dataset
 bulk_transposition_input_number_nuclei:
 - dataset
+cage_enhancements:
+- murine
 ce_background_electrolyte:
 - dataset
 ce_capillary_coating:
@@ -126,6 +130,8 @@ desi_solvent_flow_rate:
 - dataset
 desi_solvent_flow_rate_unit:
 - dataset
+diet:
+- murine
 dilution:
 - antibodies
 dms:
@@ -262,6 +268,10 @@ library_pcr_cycles_for_sample_index:
 - dataset
 library_preparation_kit:
 - dataset
+light_cycle:
+- murine
+local_lifespan_data:
+- murine
 lot_number:
 - antibodies
 mass_resolving_power:
@@ -394,6 +404,8 @@ quality_criteria:
 - sample
 quality_view:
 - dataset
+rack_setup:
+- murine
 range_z_unit:
 - dataset
 range_z_value:
@@ -426,6 +438,10 @@ roi_description:
 - dataset
 roi_id:
 - dataset
+room_health_status:
+- murine
+room_temperature:
+- murine
 rr_id:
 - antibodies
 sample_id:
@@ -557,6 +573,8 @@ warm_ischemia_time_unit:
 - sample
 warm_ischemia_time_value:
 - sample
+water_source:
+- murine
 wavelength_unit:
 - dataset
 wavelength_value:
