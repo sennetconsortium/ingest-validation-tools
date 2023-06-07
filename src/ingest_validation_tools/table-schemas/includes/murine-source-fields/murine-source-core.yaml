@@ -9,7 +9,6 @@ fields:
     required: True
 - name: sex
   description: The sex of the mouse.
-  type: text
   constraints:
     required: True
     enum:
@@ -39,7 +38,6 @@ fields:
     required: False
 - name: euthanization_method
   description: If the source was euthanized, select the method of euthanization.
-  type: test
   constraints:
     required: False
     enum:
