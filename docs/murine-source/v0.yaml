@@ -1,0 +1,115 @@
+# Generated YAML: PRs should not start here!
+fields:
+- name: local_lifespan_data
+  description: A free text description of how long mice live within the local environment.
+    It is recommended to provide the median or maximum values for murine lifespans.
+  type: string
+  constraints:
+    required: false
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: room_health_status
+  description: A description of the pathogen and opportunist exclusion level of the
+    room where the source is housed.
+  type: string
+  constraints:
+    required: false
+    enum:
+    - Pathogen free
+    - Pathogen and opportunist free
+    - Other
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: room_temperature
+  description: The temperature value in Celsius of the room where the source is housed.
+    An example is "23".
+  type: number
+  constraints:
+    required: false
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: rack_setup
+  description: The rack setup type in which the source is housed.
+  type: string
+  constraints:
+    required: false
+    enum:
+    - Biocontainment
+    - Ventilated
+    - Micro-Isolator
+    - Conventional
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: light_cycle
+  description: The light cycle in the room where the source is housed. "Standard/default"
+    refers to 12-hour photoperiods (e.g., lights on at 7:00 AM, lights off at 7:00
+    PM). "Longer photoperiods" refers to 14-hour photoperiods (e.g., lights on at
+    7:00 AM, lights off at 9:00 PM). "Reverse lightcycles" means that the the timing
+    of the 12-hour photoperiod is reversed (.e.g, lights on at 7:00 PM, lights off
+    at 7:00 AM).
+  constraints:
+    required: false
+    enum:
+    - Standard/default
+    - Longer photoperiods
+    - Reverse light cycles
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: bedding
+  description: The type of cage bedding in the cage where the source is housed.
+  type: string
+  constraints:
+    required: false
+    enum:
+    - Aspen chip
+    - Aspen shaving
+    - Pine chip
+    - Pine shaving
+    - 1/4-inch corncob
+    - 1/4-inch pelleted cellulose
+    - Refined virgin diced cellulose
+    - Non-contact cage board
+    - Wire mesh
+    - Other
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: diet
+  description: A free text description of the source's diet.
+  type: string
+  contraints:
+    required: false
+  constraints:
+    required: true
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: water_source
+  description: A free text description of the source's water supply, including any
+    treatments to the water.
+  type: string
+  constraints:
+    required: false
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
+- name: cage_enhancements
+  description: "Environmental enrichments present in the source\u2019s cage."
+  type: string
+  constraints:
+    required: false
+    enum:
+    - Nestlets
+    - Nest boxes/shelters
+    - Shelter tubes
+    - Wooden chew sticks
+    - Nylon bones
+    - Other
+  custom_constraints:
+    sequence_limit: 3
+    forbid_na: true
