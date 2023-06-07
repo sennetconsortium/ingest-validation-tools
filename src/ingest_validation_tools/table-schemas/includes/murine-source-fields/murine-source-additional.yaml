@@ -1,12 +1,12 @@
 fields:
 - name: local_lifespan_data
   description: A free text description of how long mice live within the local environment. It is recommended to provide the median or maximum values for murine lifespans.
-  type: text
+  type: string
   constraints:
     required: False
 - name: room_health_status
   description: A description of the pathogen and opportunist exclusion level of the room where the source is housed.
-  type: text
+  type: string
   constraints:
     required: False
     enum:
@@ -20,7 +20,7 @@ fields:
     required: False
 - name: rack_setup
   description: The rack setup type in which the source is housed.
-  type: text
+  type: string
   constraints:
     required: False
     enum:
@@ -38,7 +38,7 @@ fields:
     - Reverse light cycles
 - name: bedding
   description: The type of cage bedding in the cage where the source is housed.
-  type: text
+  type: string
   constraints:
     required: False
     enum:
@@ -54,17 +54,17 @@ fields:
     - Other
 - name: diet
   description: A free text description of the source's diet.
-  type: text
+  type: string
   contraints:
     required: False
 - name: water_source
   description: A free text description of the source's water supply, including any treatments to the water. 
-  type: text
+  type: string
   constraints:
     required: False
 - name: cage_enhancements
   description: Environmental enrichments present in the source’s cage.
-  type: text
+  type: string
   constraints:
     required: False
     enum:
