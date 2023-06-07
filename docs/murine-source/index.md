@@ -28,6 +28,14 @@ Related files:
 
 <blockquote markdown="1">
 
+[`strain`](#strain)<br>
+[`strain_rrid`](#strain_rrid)<br>
+[`sex`](#sex)<br>
+[`is_embryo`](#is_embryo)<br>
+[`date_of_birth_or_fertilization`](#date_of_birth_or_fertilization)<br>
+[`is_deceased`](#is_deceased)<br>
+[`date_of_death`](#date_of_death)<br>
+[`euthanization_method`](#euthanization_method)<br>
 [`local_lifespan_data`](#local_lifespan_data)<br>
 [`room_health_status`](#room_health_status)<br>
 [`room_temperature`](#room_temperature)<br>
@@ -39,6 +47,78 @@ Related files:
 [`cage_enhancements`](#cage_enhancements)<br>
 
 </blockquote>
+
+<a name="strain"></a>
+##### [`strain`](#strain)
+Jackson Labs nomenclature. When mutant alleles are part of the strain name, use "<" and ">" to indicate the superscripted alleles. For example, C57BL/6J-KitW-39J should be entered as "C57BL/6J-Kit<W-39J>", where "W-39J" would be the portion of the string displayed as superscripted text. For further information, see the "Quick Guide to Mouse Nomenclature" (https://resources.jax.org/guides/quick-guide-to-mouse-nomenclature).
+
+| constraint | value |
+| --- | --- |
+| required | `True` |
+
+<a name="strain_rrid"></a>
+##### [`strain_rrid`](#strain_rrid)
+The Research Resource Identifier (RRID) (https://scicrunch.org/resources/data/source/nlx_154697-1/search) for the strain. An example is 'RRID:MGI:3713213'.
+
+| constraint | value |
+| --- | --- |
+| required | `True` |
+
+<a name="sex"></a>
+##### [`sex`](#sex)
+The sex of the mouse.
+
+| constraint | value |
+| --- | --- |
+| required | `True` |
+| enum | `M` or `F` |
+
+<a name="is_embryo"></a>
+##### [`is_embryo`](#is_embryo)
+Is the source an embryo? Use either 'True' or 'False'.
+
+| constraint | value |
+| --- | --- |
+| type | `boolean` |
+| required | `True` |
+
+<a name="date_of_birth_or_fertilization"></a>
+##### [`date_of_birth_or_fertilization`](#date_of_birth_or_fertilization)
+The date when the mouse/embryo was born/fertilized. If the hours/minutes are not known, use '00:00'.
+
+| constraint | value |
+| --- | --- |
+| type | `datetime` |
+| format | `%Y-%m-%d %H:%M` |
+| required | `True` |
+
+<a name="is_deceased"></a>
+##### [`is_deceased`](#is_deceased)
+Is the source deceased? Use either 'True' or 'False'.
+
+| constraint | value |
+| --- | --- |
+| type | `boolean` |
+| required | `True` |
+
+<a name="date_of_death"></a>
+##### [`date_of_death`](#date_of_death)
+The date when the mouse/embryo died. If the hours/minutes are not known, use '00:00'. Leave blank if not applicable.
+
+| constraint | value |
+| --- | --- |
+| type | `datetime` |
+| format | `%Y-%m-%d %H:%M` |
+| required | `False` |
+
+<a name="euthanization_method"></a>
+##### [`euthanization_method`](#euthanization_method)
+If the source was euthanized, select the method of euthanization. Leave blank if not applicable.
+
+| constraint | value |
+| --- | --- |
+| required | `False` |
+| enum | `Carbon dioxide asphixiation`, `Inhaled anesthetic agents`, `Injected anesthetic agents`, `Cervical dislocation`, `Decapitation`, `Hypothermia`, `Rapid freezing`, or `Other` |
 
 <a name="local_lifespan_data"></a>
 ##### [`local_lifespan_data`](#local_lifespan_data)

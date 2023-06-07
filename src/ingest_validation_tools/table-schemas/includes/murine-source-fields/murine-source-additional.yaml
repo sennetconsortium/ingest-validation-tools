@@ -1,4 +1,3 @@
-fields:
 - name: local_lifespan_data
   description: A free text description of how long mice live within the local environment. It is recommended to provide the median or maximum values for murine lifespans.
   type: string
