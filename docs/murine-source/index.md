@@ -28,6 +28,7 @@ Related files:
 
 <blockquote markdown="1">
 
+[`source_id`](#source_id)<br>
 [`strain`](#strain)<br>
 [`strain_rrid`](#strain_rrid)<br>
 [`sex`](#sex)<br>
@@ -47,6 +48,15 @@ Related files:
 [`cage_enhancements`](#cage_enhancements)<br>
 
 </blockquote>
+
+<a name="source_id"></a>
+##### [`source_id`](#source_id)
+SenNet ID of the source (whole organism) of the assayed tissue. Example: `SNT123.ABCD.567`.
+
+| constraint | value |
+| --- | --- |
+| pattern (regular expression) | <code>[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}</code> |
+| required | `True` |
 
 <a name="strain"></a>
 ##### [`strain`](#strain)

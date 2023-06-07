@@ -1,4 +1,11 @@
 fields:
+- name: source_id
+  description: SenNet ID of the source (whole organism) of the assayed tissue.
+  constraints:
+    pattern: '[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}'
+  example: 'SNT123.ABCD.567'
+  custom_constraints:
+    sequence_limit: False
 - name: strain
   description: Jackson Labs nomenclature. When mutant alleles are part of the strain name, use "<" and ">" to indicate the superscripted alleles. For example, C57BL/6J-KitW-39J should be entered as "C57BL/6J-Kit<W-39J>", where "W-39J" would be the portion of the string displayed as superscripted text. For further information, see the "Quick Guide to Mouse Nomenclature" (https://resources.jax.org/guides/quick-guide-to-mouse-nomenclature).
   constraints:
