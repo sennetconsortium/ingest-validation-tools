@@ -3,8 +3,8 @@ fields:
 - name: source_id
   description: SenNet ID of the source (whole organism) of the assayed tissue.
   constraints:
+    required: false
     pattern: '[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}'
-    required: true
   example: SNT123.ABCD.567
   custom_constraints:
     forbid_na: true
