@@ -51,12 +51,12 @@ Related files:
 
 <a name="source_id"></a>
 ##### [`source_id`](#source_id)
-SenNet ID of the source (whole organism) of the assayed tissue. Example: `SNT123.ABCD.567`.
+SenNet ID of the source (whole organism) of the assayed tissue. Leave blank if not applicable. Example: `SNT123.ABCD.567`.
 
 | constraint | value |
 | --- | --- |
+| required | `False` |
 | pattern (regular expression) | <code>[SNT]+\d{3}\.[A-Za-z]{4}\.\d{3}</code> |
-| required | `True` |
 
 <a name="strain"></a>
 ##### [`strain`](#strain)
