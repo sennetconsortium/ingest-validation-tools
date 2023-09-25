@@ -1,7 +1,7 @@
 ---
-title: sample-section
+title: Sample Section
 schema_name: sample-section
-category: Other TSVs
+category: Sample
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
@@ -9,46 +9,21 @@ layout: default
 
 Related files:
 
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/sample-section/sample-section.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/sample-section/sample-section.tsv): Alternative for metadata entry.
 
-
-
+- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/sample-section/latest/sample-section.xlsx): For metadata entry.
+- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/sample-section/latest/sample-section.tsv): Alternative for metadata entry.
 
 
 
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
+
+<summary><a href="https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2F1f3d4b00-f6f2-48a4-8795-755be215f546"><b>Version 2 (use this one)</b></a></summary>
 
 
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
+<details markdown="1" ><summary><b>Version 1</b></summary>
 
-<blockquote markdown="1">
-
-[`version`](#version)<br>
-[`sample_id`](#sample_id)<br>
-[`type`](#type)<br>
-[`source_storage_time_value`](#source_storage_time_value)<br>
-[`source_storage_time_unit`](#source_storage_time_unit)<br>
-[`preparation_media`](#preparation_media)<br>
-[`preparation_condition`](#preparation_condition)<br>
-[`processing_time_value`](#processing_time_value)<br>
-[`processing_time_unit`](#processing_time_unit)<br>
-[`storage_media`](#storage_media)<br>
-[`storage_method`](#storage_method)<br>
-[`quality_criteria`](#quality_criteria)<br>
-[`histological_report`](#histological_report)<br>
-[`section_thickness_value`](#section_thickness_value)<br>
-[`section_thickness_unit`](#section_thickness_unit)<br>
-[`section_index_number`](#section_index_number)<br>
-[`area_value`](#area_value)<br>
-[`area_unit`](#area_unit)<br>
-[`notes`](#notes)<br>
-
-</blockquote>
 
 <a name="version"></a>
 ##### [`version`](#version)
@@ -222,4 +197,7 @@ Notes. Leave blank if not applicable.
 | required | `False` |
 
 </details>
+
+
+<br>
 

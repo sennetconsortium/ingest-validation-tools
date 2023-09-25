@@ -124,6 +124,7 @@ area_unit:
 area_value:
 - sample-section
 assay_category:
+- 10x-multiome
 - af
 - bodyct
 - bulkatacseq
@@ -131,27 +132,54 @@ assay_category:
 - celldive
 - cems
 - codex
+- confocal
+- cosmx
+- cycif
+- dbit
+- desi
+- enhanced-srs
 - gcms
+- geomx
+- hifi-slide
+- histology
 - imc
 - imc3d
 - ims
 - lcms
 - lightsheet
+- maldi
+- mc
+- merfish
 - mibi
 - microct
 - mri
 - mxif
 - nano
+- nano-desi
 - oct
+- organ
+- phenocycler
+- rnaseq-geomx
+- rnaseq-visium
+- sample
+- sample-block
+- sample-section
+- sample-suspension
 - scatacseq
 - scrnaseq
 - scrnaseq-hca
+- second-harmonic-generation
 - seqfish
+- sims
 - slideseq
 - stained
+- thick-section-multiphoton-mxif
 - ultrasound
+- visium
 - wgs
+- xenium
 assay_type:
+- 10x-multiome
 - af
 - bodyct
 - bulkatacseq
@@ -159,26 +187,53 @@ assay_type:
 - celldive
 - cems
 - codex
+- confocal
+- cosmx
+- cycif
+- dbit
+- desi
+- enhanced-srs
 - gcms
+- geomx
+- hifi-slide
+- histology
 - imc
 - imc3d
 - ims
 - lcms
 - lightsheet
+- maldi
+- mc
+- merfish
 - mibi
 - microct
 - mri
 - mxif
 - nano
+- nano-desi
 - oct
+- organ
+- phenocycler
+- publication
+- rnaseq-geomx
+- rnaseq-visium
+- sample
+- sample-block
+- sample-section
+- sample-suspension
 - scatacseq
 - scrnaseq
 - scrnaseq-hca
+- second-harmonic-generation
 - seqfish
+- sims
 - slideseq
 - stained
+- thick-section-multiphoton-mxif
 - ultrasound
+- visium
 - wgs
+- xenium
 bead_barcode_offset:
 - slideseq
 bead_barcode_read:
@@ -233,6 +288,10 @@ cold_ischemia_time_unit:
 - sample
 cold_ischemia_time_value:
 - sample
+cold_ischemic_time_unit:
+- organ
+cold_ischemic_time_value:
+- organ
 column_length_unit:
 - gcms
 column_length_value:
@@ -275,6 +334,7 @@ contributors_path:
 - mxif
 - nano
 - oct
+- publication
 - scatacseq
 - scrnaseq
 - scrnaseq-hca
@@ -311,6 +371,7 @@ data_path:
 - mxif
 - nano
 - oct
+- publication
 - scatacseq
 - scrnaseq
 - scrnaseq-hca
@@ -479,6 +540,61 @@ ion_mobility:
 - lcms
 ion_source:
 - gcms
+is_cedar:
+- 10x-multiome
+- af
+- bodyct
+- bulkatacseq
+- bulkrnaseq
+- celldive
+- cems
+- codex
+- confocal
+- cosmx
+- cycif
+- dbit
+- desi
+- enhanced-srs
+- gcms
+- geomx
+- hifi-slide
+- histology
+- imc
+- imc3d
+- ims
+- lcms
+- lightsheet
+- maldi
+- mc
+- merfish
+- mibi
+- microct
+- mri
+- mxif
+- nano-desi
+- oct
+- organ
+- phenocycler
+- publication
+- rnaseq-geomx
+- rnaseq-visium
+- sample
+- sample-block
+- sample-section
+- sample-suspension
+- scatacseq
+- scrnaseq
+- scrnaseq-hca
+- second-harmonic-generation
+- seqfish
+- sims
+- slideseq
+- stained
+- thick-section-multiphoton-mxif
+- ultrasound
+- visium
+- wgs
+- xenium
 is_contact:
 - contributors
 is_targeted:
@@ -510,6 +626,8 @@ is_technical_replicate:
 - scrnaseq
 - scrnaseq-hca
 - slideseq
+lab_id:
+- organ
 label_name:
 - lcms
 labeling:
@@ -518,6 +636,8 @@ labeling:
 - lcms
 last_name:
 - contributors
+laterality:
+- organ
 lc_column_model:
 - lcms
 lc_column_vendor:
@@ -812,7 +932,28 @@ operator_email:
 orcid_id:
 - contributors
 organ_condition:
+- organ
 - sample
+organ_height_unit:
+- organ
+organ_height_value:
+- organ
+organ_id:
+- organ
+organ_length_unit:
+- organ
+organ_length_value:
+- organ
+organ_volume_unit:
+- organ
+organ_volume_value:
+- organ
+organ_weight_value:
+- organ
+organ_width_unit:
+- organ
+organ_width_value:
+- organ
 overall_protocols_io_doi:
 - af
 - celldive
@@ -823,13 +964,63 @@ overall_protocols_io_doi:
 - mxif
 - nano
 - stained
+parent_id:
+- 10x-multiome
+- af
+- bodyct
+- bulkatacseq
+- bulkrnaseq
+- celldive
+- cems
+- codex
+- confocal
+- cosmx
+- cycif
+- dbit
+- desi
+- enhanced-srs
+- gcms
+- geomx
+- hifi-slide
+- histology
+- imc
+- lcms
+- lightsheet
+- maldi
+- mc
+- merfish
+- mibi
+- microct
+- mri
+- mxif
+- nano-desi
+- oct
+- phenocycler
+- publication
+- rnaseq-geomx
+- rnaseq-visium
+- scatacseq
+- scrnaseq
+- scrnaseq-hca
+- second-harmonic-generation
+- seqfish
+- sims
+- slideseq
+- thick-section-multiphoton-mxif
+- ultrasound
+- visium
+- wgs
+- xenium
 pathologist_report:
 - sample
 pathology_distance_unit:
 - sample-block
 pathology_distance_value:
 - sample-block
+pathology_report:
+- organ
 perfusion_solution:
+- organ
 - sample
 pi:
 - af
@@ -1342,9 +1533,15 @@ tissue_id:
 - stained
 - ultrasound
 - wgs
+total_ischemic_time_unit:
+- organ
+total_ischemic_time_value:
+- organ
 total_sections_analyzed:
 - microct
 - oct
+transport_solution:
+- organ
 transposition_input:
 - scatacseq
 transposition_kit_number:
@@ -1390,6 +1587,7 @@ version:
 - mxif
 - nano
 - oct
+- publication
 - sample-block
 - sample-section
 - sample-suspension
@@ -1416,6 +1614,10 @@ warm_ischemia_time_unit:
 - sample
 warm_ischemia_time_value:
 - sample
+warm_ischemic_time_unit:
+- organ
+warm_ischemic_time_value:
+- organ
 water_source:
 - murine-source
 wavelength_unit:
@@ -1423,6 +1625,7 @@ wavelength_unit:
 wavelength_value:
 - oct
 weight_unit:
+- organ
 - sample-block
 weight_value:
 - sample-block

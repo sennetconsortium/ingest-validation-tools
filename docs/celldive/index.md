@@ -1,7 +1,7 @@
 ---
-title: Cell DIVE / cell-dive
+title: Cell DIVE
 schema_name: celldive
-category: Imaging assays
+category: Multiplex Fluorescence Based Experiment (MxFBE)
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
@@ -9,75 +9,21 @@ layout: default
 
 Related files:
 
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/celldive/celldive-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/celldive/celldive-metadata.tsv): Alternative for metadata entry.
 
-CellDIVE uploads require metadata on the antibodies used in the assay to be provided in an Antibodies TSV. For CellDIVE, the `channel_id` is represented as a cycle#/channel# combination (of the form `Cycle[0-9]_CH[0-9]`) linked to a given image file in the directory.
-The other fields function the same way for all assays using antibodies. For more information, see the [Antibodies TSV documentation](../antibodies).
-
-## Directory schemas
-### v0
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>channel_list\.txt</code> | ✓ | Information about the capture channels and tags (comma separated) |
-| <code>slide_list\.txt</code> | ✓ | Information about the slides used by the experiment- each line corresponds to a slide name (begins with S - e.g. S20030077) - used in filenames |
-| <code>HuBMAP_OME/region_\d+/S\d+_region_\d+\.ome\.tif</code> (example: <code>HuBMAP_OME/region_011/S20030092_region_011.ome.tif</code>) | ✓ | OME TIFF Files for the corresponding region (e.g. region_001) by slide (e.g S20030077) |
-| <code>HuBMAP_rounds/round_info_\d+\.dat</code> (example: <code>HuBMAP_rounds/round_info_002.dat</code>) | ✓ | Metadata file for the capture item-value tab separated format |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
+- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/celldive/latest/celldive.xlsx): For metadata entry.
+- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/celldive/latest/celldive.tsv): Alternative for metadata entry.
 
 
 
-In the portal: Cell DIVE not in Portal / cell-dive not in Portal
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
+
+<summary><a href="https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2F2d2c70c3-4735-4844-9542-832b8ddaee52"><b>Version 2 (use this one)</b></a></summary>
 
 
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
+<details markdown="1" ><summary><b>Version 1</b></summary>
 
-<blockquote markdown="1">
-
-<details markdown="1"><summary>Shared by all types</summary>
-
-[`version`](#version)<br>
-[`description`](#description)<br>
-[`donor_id`](#donor_id)<br>
-[`tissue_id`](#tissue_id)<br>
-[`execution_datetime`](#execution_datetime)<br>
-[`protocols_io_doi`](#protocols_io_doi)<br>
-[`operator`](#operator)<br>
-[`operator_email`](#operator_email)<br>
-[`pi`](#pi)<br>
-[`pi_email`](#pi_email)<br>
-[`assay_category`](#assay_category)<br>
-[`assay_type`](#assay_type)<br>
-[`analyte_class`](#analyte_class)<br>
-[`is_targeted`](#is_targeted)<br>
-[`acquisition_instrument_vendor`](#acquisition_instrument_vendor)<br>
-[`acquisition_instrument_model`](#acquisition_instrument_model)<br>
-
-</details>
-<details markdown="1"><summary>Unique to this type</summary>
-
-[`number_of_antibodies`](#number_of_antibodies)<br>
-[`number_of_channels`](#number_of_channels)<br>
-[`number_of_cycles`](#number_of_cycles)<br>
-[`number_of_imaging_rounds`](#number_of_imaging_rounds)<br>
-[`resolution_x_value`](#resolution_x_value)<br>
-[`resolution_x_unit`](#resolution_x_unit)<br>
-[`resolution_y_value`](#resolution_y_value)<br>
-[`resolution_y_unit`](#resolution_y_unit)<br>
-[`processing_protocols_io_doi`](#processing_protocols_io_doi)<br>
-[`overall_protocols_io_doi`](#overall_protocols_io_doi)<br>
-[`antibodies_path`](#antibodies_path)<br>
-[`contributors_path`](#contributors_path)<br>
-[`data_path`](#data_path)<br>
-</details>
-
-</blockquote>
 
 ### Shared by all types
 
@@ -345,6 +291,7 @@ Relative path to file or directory with instrument data. Downstream processing w
 </details>
 
 
+
 <details markdown="1" ><summary><b>Version 0</b></summary>
 
 
@@ -595,3 +542,20 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><a href="https://docs.google.com/spreadsheets/d/1pZD2e51e4QkxzIk6xjHPPu1RBZpx5mzoykMmlaDK8rA"><b>Version 2 (use this one)</b> (draft - submission of data prepared using this schema will be supported by Sept. 30) </a></summary>
+
+<summary><b>Version 0</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>channel_list\.txt</code> | ✓ | Information about the capture channels and tags (comma separated) |
+| <code>slide_list\.txt</code> | ✓ | Information about the slides used by the experiment- each line corresponds to a slide name (begins with S - e.g. S20030077) - used in filenames |
+| <code>HuBMAP_OME/region_\d+/S\d+_region_\d+\.ome\.tif</code> (example: <code>HuBMAP_OME/region_011/S20030092_region_011.ome.tif</code>) | ✓ | OME TIFF Files for the corresponding region (e.g. region_001) by slide (e.g S20030077) |
+| <code>HuBMAP_rounds/round_info_\d+\.dat</code> (example: <code>HuBMAP_rounds/round_info_002.dat</code>) | ✓ | Metadata file for the capture item-value tab separated format |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+

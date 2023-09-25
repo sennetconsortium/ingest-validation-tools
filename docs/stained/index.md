@@ -1,90 +1,29 @@
 ---
 title: PAS microscopy
 schema_name: stained
-category: Imaging assays
+category: Histology
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
 ---
 
 Related files:
-- [🔬 Background doc](https://portal.hubmapconsortium.org/docs/assays/pas): More details about this type.
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/stained/stained-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/stained/stained-metadata.tsv): Alternative for metadata entry.
-
-This schema is for microscopy of tissue treated with periodic acid–Schiff stain (stained). For an example of a PAS (Periodic acid-Schiff) dataset & directory, see this [example PAS stained dataset](https://portal.hubmapconsortium.org/browse/dataset/7308530b92438fdbe258b501aeb86069#files) and click the Globus link.
-
-## Directory schemas
-### v1
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_images/[^/]+ome\.(tif&#124;tiff)</code> | ✓ | OME TIFF files (multichannel, multi-layered, image pyramids) produced by the PAS microscopy experiment |
-| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_transformations/[^/]+\.txt</code> |  | Transformations to PAS (related) data |
-| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.xml</code> | ✓ | XML metadata file from the autofluorescence microscopy experiments |
-| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.(scn&#124;czi&#124;tif&#124;tiff)</code> | ✓ | Raw microscope file for the experiment |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
-
-### v0
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_images/[^/]+ome\.(tif&#124;tiff)</code> | ✓ | OME TIFF files (multichannel, multi-layered, image pyramids) produced by the PAS microscopy experiment |
-| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_transformations/[^/]+\.txt</code> |  | Transformations to PAS (related) data |
-| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.xml</code> | ✓ | XML metadata file from the autofluorescence microscopy experiments |
-| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.scn</code> | ✓ | Raw microscope file for the experiment |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
 
 
 
-In the portal: PAS microscopy not in Portal
+This schema has been incorporated into the histology schema which can be accessed [here](https://hubmapconsortium.github.io/ingest-validation-tools/histology/).
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
-
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
-
-<blockquote markdown="1">
-
-<details markdown="1"><summary>Shared by all types</summary>
-
-[`version`](#version)<br>
-[`description`](#description)<br>
-[`donor_id`](#donor_id)<br>
-[`tissue_id`](#tissue_id)<br>
-[`execution_datetime`](#execution_datetime)<br>
-[`protocols_io_doi`](#protocols_io_doi)<br>
-[`operator`](#operator)<br>
-[`operator_email`](#operator_email)<br>
-[`pi`](#pi)<br>
-[`pi_email`](#pi_email)<br>
-[`assay_category`](#assay_category)<br>
-[`assay_type`](#assay_type)<br>
-[`analyte_class`](#analyte_class)<br>
-[`is_targeted`](#is_targeted)<br>
-[`acquisition_instrument_vendor`](#acquisition_instrument_vendor)<br>
-[`acquisition_instrument_model`](#acquisition_instrument_model)<br>
-
-</details>
-<details markdown="1"><summary>Unique to this type</summary>
-
-[`resolution_x_value`](#resolution_x_value)<br>
-[`resolution_x_unit`](#resolution_x_unit)<br>
-[`resolution_y_value`](#resolution_y_value)<br>
-[`resolution_y_unit`](#resolution_y_unit)<br>
-[`resolution_z_value`](#resolution_z_value)<br>
-[`resolution_z_unit`](#resolution_z_unit)<br>
-[`stain`](#stain)<br>
-[`section_prep_protocols_io_doi`](#section_prep_protocols_io_doi)<br>
-[`overall_protocols_io_doi`](#overall_protocols_io_doi)<br>
-[`contributors_path`](#contributors_path)<br>
-[`data_path`](#data_path)<br>
+<details markdown="1" open="true"><summary><s>Version 2 (current)</s> (deprecated)</summary>
+We do not expect to receive any new data of this assay type.
+If you are planning to submit new data of this assay type, reach out to help@hubmapconsortium.org.
 </details>
 
-</blockquote>
+
+<details markdown="1" ><summary><b>Version 1</b></summary>
+
 
 ### Shared by all types
 
@@ -334,6 +273,7 @@ Relative path to file or directory with instrument data. Downstream processing w
 </details>
 
 
+
 <details markdown="1" ><summary><b>Version 0</b></summary>
 
 
@@ -566,3 +506,28 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><b>Version 1 (use this one)</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_images/[^/]+ome\.(tif&#124;tiff)</code> | ✓ | OME TIFF files (multichannel, multi-layered, image pyramids) produced by the PAS microscopy experiment |
+| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_transformations/[^/]+\.txt</code> |  | Transformations to PAS (related) data |
+| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.xml</code> | ✓ | XML metadata file from the autofluorescence microscopy experiments |
+| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.(scn&#124;czi&#124;tif&#124;tiff)</code> | ✓ | Raw microscope file for the experiment |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+
+<summary><b>Version 0</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_images/[^/]+ome\.(tif&#124;tiff)</code> | ✓ | OME TIFF files (multichannel, multi-layered, image pyramids) produced by the PAS microscopy experiment |
+| <code>(processedMicroscopy&#124;processed_microscopy)/[^/]+_transformations/[^/]+\.txt</code> |  | Transformations to PAS (related) data |
+| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.xml</code> | ✓ | XML metadata file from the autofluorescence microscopy experiments |
+| <code>(rawMicroscopy&#124;raw_microscopy)/[^/]+\.scn</code> | ✓ | Raw microscope file for the experiment |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+

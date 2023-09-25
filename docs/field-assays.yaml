@@ -56,7 +56,7 @@ acquisition_instrument_model:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -106,7 +106,7 @@ acquisition_instrument_vendor:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -155,7 +155,7 @@ analyte_class:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -184,15 +184,29 @@ area_normalized_ion_dose_unit:
 area_normalized_ion_dose_value:
 - MIBI
 assay_category:
+- 10x Multiome
 - 3D Imaging Mass Cytometry
 - AF
+- ATACseq (bulk)
+- Auto-fluorescence
 - Body CT
 - CE-MS
 - CODEX
 - CODEX2
 - Cell DIVE
+- Confocal
+- CosMx
+- CyCIF
+- DBiT
 - DESI
+- Enhanced Stimulated Raman Spectroscopy (SRS)
 - GC-MS
+- GeoMx
+- GeoMx (RNA)
+- GeoMx (protein)
+- HiFi-Slide
+- Histology
+- IMS
 - Imaging Mass Cytometry
 - LC-MS
 - LC-MS (metabolomics)
@@ -200,7 +214,9 @@ assay_category:
 - LC-MS Top-Down
 - LC-MS/MS (label-free proteomics)
 - Light Sheet
+- MALDI
 - MALDI-IMS
+- MERFISH
 - MIBI
 - MRI
 - MS
@@ -208,20 +224,38 @@ assay_category:
 - MS Bottom-Up
 - MS Top-Down
 - Micro CT
+- Molecular Cartography
+- Multiplex Ion Beam Imaging
 - MxIF
 - NanoDESI
 - NanoPOTS
 - OCT
+- Organ
 - PAS microscopy
+- PhenoCycler
+- RNAseq (GeoMx)
+- RNAseq (Visium)
+- RNAseq (bulk)
+- SIMS
 - SIMS-IMS
 - SNARE-seq2
 - SNARE2-RNAseq
+- Sample
+- Sample Block
+- Sample Section
+- Sample Suspension
+- Second Harmonic Generation
 - Slide-seq
+- Thick Section Multiphoton MxIF
 - Ultrasound
+- Visium
 - WGS
-- bulk RNA
+- Xenium
+- bulk-RNA
 - bulkATACseq
 - cell-dive
+- scATAC-seq
+- scRNA-seq
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -234,15 +268,29 @@ assay_category:
 - snRNAseq-10xGenomics-v2
 - snRNAseq-10xGenomics-v3
 assay_type:
+- 10x Multiome
 - 3D Imaging Mass Cytometry
 - AF
+- ATACseq (bulk)
+- Auto-fluorescence
 - Body CT
 - CE-MS
 - CODEX
 - CODEX2
 - Cell DIVE
+- Confocal
+- CosMx
+- CyCIF
+- DBiT
 - DESI
+- Enhanced Stimulated Raman Spectroscopy (SRS)
 - GC-MS
+- GeoMx
+- GeoMx (RNA)
+- GeoMx (protein)
+- HiFi-Slide
+- Histology
+- IMS
 - Imaging Mass Cytometry
 - LC-MS
 - LC-MS (metabolomics)
@@ -250,7 +298,9 @@ assay_type:
 - LC-MS Top-Down
 - LC-MS/MS (label-free proteomics)
 - Light Sheet
+- MALDI
 - MALDI-IMS
+- MERFISH
 - MIBI
 - MRI
 - MS
@@ -258,20 +308,40 @@ assay_type:
 - MS Bottom-Up
 - MS Top-Down
 - Micro CT
+- Molecular Cartography
+- Multiplex Ion Beam Imaging
 - MxIF
 - NanoDESI
 - NanoPOTS
 - OCT
+- Organ
 - PAS microscopy
+- PhenoCycler
+- Publication
+- RNAseq (GeoMx)
+- RNAseq (Visium)
+- RNAseq (bulk)
+- SIMS
 - SIMS-IMS
 - SNARE-seq2
 - SNARE2-RNAseq
+- Sample
+- Sample Block
+- Sample Section
+- Sample Suspension
+- Second Harmonic Generation
 - Slide-seq
+- Thick Section Multiphoton MxIF
 - Ultrasound
+- Visium
 - WGS
-- bulk RNA
+- Xenium
+- bulk-RNA
 - bulkATACseq
 - cell-dive
+- publication
+- scATAC-seq
+- scRNA-seq
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -292,13 +362,13 @@ bead_barcode_size:
 bulk_atac_cell_isolation_protocols_io_doi:
 - bulkATACseq
 bulk_rna_isolation_protocols_io_doi:
-- bulk RNA
+- bulk-RNA
 bulk_rna_isolation_quality_metric_value:
-- bulk RNA
+- bulk-RNA
 bulk_rna_yield_units_per_tissue_unit:
-- bulk RNA
+- bulk-RNA
 bulk_rna_yield_value:
-- bulk RNA
+- bulk-RNA
 bulk_transposition_input_number_nuclei:
 - bulkATACseq
 ce_background_electrolyte:
@@ -404,9 +474,10 @@ contributors_path:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
+- publication
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -470,9 +541,10 @@ data_path:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
+- publication
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -523,7 +595,7 @@ description:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -599,7 +671,7 @@ donor_id:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -661,7 +733,7 @@ execution_datetime:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -729,6 +801,76 @@ ion_mobility:
 - SIMS-IMS
 ion_source:
 - GC-MS
+is_cedar:
+- 10x Multiome
+- 3D Imaging Mass Cytometry
+- AF
+- ATACseq (bulk)
+- Auto-fluorescence
+- Body CT
+- CE-MS
+- CODEX
+- Cell DIVE
+- Confocal
+- CosMx
+- CyCIF
+- DBiT
+- DESI
+- Enhanced Stimulated Raman Spectroscopy (SRS)
+- GC-MS
+- GeoMx
+- GeoMx (RNA)
+- GeoMx (protein)
+- HiFi-Slide
+- Histology
+- IMS
+- Imaging Mass Cytometry
+- LC-MS
+- Light Sheet
+- MALDI
+- MERFISH
+- MRI
+- Micro CT
+- Molecular Cartography
+- Multiplex Ion Beam Imaging
+- MxIF
+- NanoDESI
+- OCT
+- Organ
+- PAS microscopy
+- PhenoCycler
+- Publication
+- RNAseq (GeoMx)
+- RNAseq (Visium)
+- RNAseq (bulk)
+- SIMS
+- SNARE-seq2
+- SNARE2-RNAseq
+- Sample
+- Sample Block
+- Sample Section
+- Sample Suspension
+- Second Harmonic Generation
+- Slide-seq
+- Thick Section Multiphoton MxIF
+- Ultrasound
+- Visium
+- WGS
+- Xenium
+- bulk-RNA
+- bulkATACseq
+- scATAC-seq
+- scRNA-seq
+- scRNAseq
+- scRNAseq-10xGenomics-v2
+- scRNAseq-10xGenomics-v3
+- sciATACseq
+- sciRNAseq
+- seqFISH
+- snATACseq
+- snRNAseq
+- snRNAseq-10xGenomics-v2
+- snRNAseq-10xGenomics-v3
 is_targeted:
 - 3D Imaging Mass Cytometry
 - AF
@@ -760,7 +902,7 @@ is_targeted:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -973,7 +1115,7 @@ library_adapter_sequence:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -990,7 +1132,7 @@ library_average_fragment_size:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -1013,7 +1155,7 @@ library_construction_protocols_io_doi:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -1037,7 +1179,7 @@ library_final_yield_unit:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -1052,7 +1194,7 @@ library_final_yield_unit:
 library_final_yield_value:
 - SNARE2-RNAseq
 - Slide-seq
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -1081,7 +1223,7 @@ library_layout:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -1112,7 +1254,7 @@ library_pcr_cycles_for_sample_index:
 - SNARE-seq2
 - SNARE2-RNAseq
 - Slide-seq
-- bulk RNA
+- bulk-RNA
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -1341,7 +1483,7 @@ operator:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -1391,7 +1533,7 @@ operator_email:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -1405,6 +1547,8 @@ operator_email:
 - snRNAseq
 - snRNAseq-10xGenomics-v2
 - snRNAseq-10xGenomics-v3
+organ_id:
+- Organ
 overall_protocols_io_doi:
 - AF
 - CE-MS
@@ -1427,6 +1571,68 @@ overall_protocols_io_doi:
 - PAS microscopy
 - SIMS-IMS
 - cell-dive
+parent_id:
+- 10x Multiome
+- AF
+- ATACseq (bulk)
+- Auto-fluorescence
+- Body CT
+- CE-MS
+- CODEX
+- Cell DIVE
+- Confocal
+- CosMx
+- CyCIF
+- DBiT
+- DESI
+- Enhanced Stimulated Raman Spectroscopy (SRS)
+- GC-MS
+- GeoMx
+- GeoMx (RNA)
+- GeoMx (protein)
+- HiFi-Slide
+- Histology
+- Imaging Mass Cytometry
+- LC-MS
+- Light Sheet
+- MALDI
+- MERFISH
+- MRI
+- Micro CT
+- Molecular Cartography
+- Multiplex Ion Beam Imaging
+- MxIF
+- NanoDESI
+- OCT
+- PhenoCycler
+- Publication
+- RNAseq (GeoMx)
+- RNAseq (Visium)
+- RNAseq (bulk)
+- SIMS
+- SNARE-seq2
+- SNARE2-RNAseq
+- Second Harmonic Generation
+- Slide-seq
+- Thick Section Multiphoton MxIF
+- Ultrasound
+- Visium
+- WGS
+- Xenium
+- bulk-RNA
+- bulkATACseq
+- scATAC-seq
+- scRNA-seq
+- scRNAseq
+- scRNAseq-10xGenomics-v2
+- scRNAseq-10xGenomics-v3
+- sciATACseq
+- sciRNAseq
+- seqFISH
+- snATACseq
+- snRNAseq
+- snRNAseq-10xGenomics-v2
+- snRNAseq-10xGenomics-v3
 pi:
 - 3D Imaging Mass Cytometry
 - AF
@@ -1463,7 +1669,7 @@ pi:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -1513,7 +1719,7 @@ pi_email:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -1674,7 +1880,7 @@ protocols_io_doi:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -1857,13 +2063,13 @@ rnaseq_assay_input:
 - snRNAseq-10xGenomics-v2
 - snRNAseq-10xGenomics-v3
 rnaseq_assay_input_unit:
-- bulk RNA
+- bulk-RNA
 rnaseq_assay_input_value:
-- bulk RNA
+- bulk-RNA
 rnaseq_assay_method:
 - SNARE2-RNAseq
 - Slide-seq
-- bulk RNA
+- bulk-RNA
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
@@ -1890,6 +2096,10 @@ roi_id:
 - Micro CT
 - OCT
 - Ultrasound
+sample_id:
+- Sample Block
+- Sample Section
+- Sample Suspension
 sample_quality_metric:
 - bulkATACseq
 sc_isolation_cell_number:
@@ -2007,7 +2217,7 @@ sequencing_phix_percent:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -2024,7 +2234,7 @@ sequencing_read_format:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -2041,7 +2251,7 @@ sequencing_read_percent_q30:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -2058,7 +2268,7 @@ sequencing_reagent_kit:
 - SNARE2-RNAseq
 - Slide-seq
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - scRNAseq
 - scRNAseq-10xGenomics
@@ -2164,7 +2374,7 @@ tissue_id:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
 - scRNAseq
@@ -2263,9 +2473,10 @@ version:
 - Slide-seq
 - Ultrasound
 - WGS
-- bulk RNA
+- bulk-RNA
 - bulkATACseq
 - cell-dive
+- publication
 - scRNAseq
 - scRNAseq-10xGenomics
 - scRNAseq-10xGenomics-v2
