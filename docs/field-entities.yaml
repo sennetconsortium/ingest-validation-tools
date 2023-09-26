@@ -203,6 +203,7 @@ ion_mobility:
 ion_source:
 - dataset
 is_cedar:
+- contributors
 - dataset
 - organ
 - sample
