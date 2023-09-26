@@ -1,92 +1,26 @@
 ---
 title: Imaging Mass Cytometry
 schema_name: imc
-category: Imaging mass spectrometry
+category: Imaging Mass Spectrometry (IMS)
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
 ---
 
 Related files:
-- [🔬 Background doc](https://portal.hubmapconsortium.org/docs/assays/imc): More details about this type.
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/imc/imc-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/imc/imc-metadata.tsv): Alternative for metadata entry.
 
-This schema is for imaging mass cytometry (IMC). IMC uploads require metadata on the antibodies used in the assay to be provided in an Antibodies TSV. For IMC, the `channel_id` is the name of the metal tag on the corresponding antibody.
-The other fields function the same way for all assays using antibodies. For more information, see the [Antibodies TSV documentation](../antibodies).
-
-## Directory schemas
-### v0
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>TODO</code> | ✓ | Directory structure not yet specified. |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
+Excel and TSV templates for this schema will be available when the draft next-generation schema, to be used in all future submissions, is finalized (no later than Sept. 30).
 
 
-
-In the portal: Imaging Mass Cytometry not in Portal
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
+
+<summary><b>Version 2 (use this one)</b> (draft - submission of data prepared using this schema will be supported by Sept. 30) (TBD)</summary>
 
 
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
+<details markdown="1" ><summary><b>Version 1</b></summary>
 
-<blockquote markdown="1">
-
-<details markdown="1"><summary>Shared by all types</summary>
-
-[`version`](#version)<br>
-[`description`](#description)<br>
-[`donor_id`](#donor_id)<br>
-[`tissue_id`](#tissue_id)<br>
-[`execution_datetime`](#execution_datetime)<br>
-[`protocols_io_doi`](#protocols_io_doi)<br>
-[`operator`](#operator)<br>
-[`operator_email`](#operator_email)<br>
-[`pi`](#pi)<br>
-[`pi_email`](#pi_email)<br>
-[`assay_category`](#assay_category)<br>
-[`assay_type`](#assay_type)<br>
-[`analyte_class`](#analyte_class)<br>
-[`is_targeted`](#is_targeted)<br>
-[`acquisition_instrument_vendor`](#acquisition_instrument_vendor)<br>
-[`acquisition_instrument_model`](#acquisition_instrument_model)<br>
-
-</details>
-<details markdown="1"><summary>Unique to this type</summary>
-
-[`preparation_instrument_vendor`](#preparation_instrument_vendor)<br>
-[`preparation_instrument_model`](#preparation_instrument_model)<br>
-[`section_prep_protocols_io_doi`](#section_prep_protocols_io_doi)<br>
-[`reagent_prep_protocols_io_doi`](#reagent_prep_protocols_io_doi)<br>
-[`number_of_channels`](#number_of_channels)<br>
-[`ablation_distance_between_shots_x_value`](#ablation_distance_between_shots_x_value)<br>
-[`ablation_distance_between_shots_x_units`](#ablation_distance_between_shots_x_units)<br>
-[`ablation_distance_between_shots_y_value`](#ablation_distance_between_shots_y_value)<br>
-[`ablation_distance_between_shots_y_units`](#ablation_distance_between_shots_y_units)<br>
-[`ablation_frequency_value`](#ablation_frequency_value)<br>
-[`ablation_frequency_unit`](#ablation_frequency_unit)<br>
-[`roi_description`](#roi_description)<br>
-[`roi_id`](#roi_id)<br>
-[`acquisition_id`](#acquisition_id)<br>
-[`dual_count_start`](#dual_count_start)<br>
-[`max_x_width_value`](#max_x_width_value)<br>
-[`max_x_width_unit`](#max_x_width_unit)<br>
-[`max_y_height_value`](#max_y_height_value)<br>
-[`max_y_height_unit`](#max_y_height_unit)<br>
-[`segment_data_format`](#segment_data_format)<br>
-[`signal_type`](#signal_type)<br>
-[`data_precision_bytes`](#data_precision_bytes)<br>
-[`antibodies_path`](#antibodies_path)<br>
-[`contributors_path`](#contributors_path)<br>
-[`data_path`](#data_path)<br>
-</details>
-
-</blockquote>
 
 ### Shared by all types
 
@@ -459,6 +393,7 @@ Relative path to file or directory with instrument data. Downstream processing w
 </details>
 
 
+
 <details markdown="1" ><summary><b>Version 0</b></summary>
 
 
@@ -826,3 +761,22 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><b>Version 2 (use this one)</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>TODO</code> | ✓ | Directory structure not yet specified. |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+
+<summary><b>Version 0</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>TODO</code> | ✓ | Directory structure not yet specified. |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+

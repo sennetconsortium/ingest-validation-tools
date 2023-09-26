@@ -1,18 +1,34 @@
 # Changelog
-## v0.0.17 - in progress
-- Fixed formatting of listed enums in donor-v0.yaml to allow validation to run without 500 error
-- Update to frictionless 4.40.9 for better error message formatting
-- Updated regex for `donor_id` and `tissue_id`
-- Added murine source spec
 
 ## v0.0.16 - in progress
--updated issue templates.
--removed donor metadata spec (had not been in use)
+
+- add support for Publication type
+- updated issue templates.
+- removed donor metadata spec (had not been in use)
 - Added examples for fields with pattern constraint
 - Replaced `preparation_temperature` with `preparation_condition` and updated associated enumerations in the sample-section, sample-block, and sample-suspension schemas
 - Replaced `storage_temperature` with `storage_method` and updated associated enumerations in the sample-section, sample-block, and sample-suspension schemas
+- Updated enum 'bulk RNA' assay type to be 'bulk-RNA' across tools
+- Adding organ v2 schema
+- Added publication docs
+- Removed double publication enum (P/p)
+- Updated publication directory schema 20230616
+- Changes for CEDAR docs
+- Tweaks for CEDAR release
+- Release new assays with links
+- Fix in place to avoid assay conflicts with new assays
+- Rework wording for CEDAR updates
+- Updated upload.py to integrate CEDAR validation, replaced walrus operators, removed unused import
+- Updated CEDAR validation routine based on changes to Spreadsheet Validator
+- Updated tests based on changes to error dict structure
+- Tested both CEDAR and local validation paths
+- Make changes to Histology based on feedback
+- Update documentation based on feedback
+- Addtional changes to Histology
+- Adding SenNet display changes
 
 ## v0.0.15 - 2023-04-04
+
 - Versioned directory structure schema
 - Added MxIF directory structure schema.
 - Added Lightsheet version 1.
@@ -41,8 +57,12 @@
 - Updated error messages to be less programmer centric.
 - Updated ims-v2 spec to include DESI as an acceptable enumeration for ms_source.
 - Upgraded CI python definition to 3.9.
+- Update Cell DIVE with CEDAR UUID
+- Add Histology directory schemas
+- Fix Histology schema
 
 ## v0.0.14 - 2022-06-23
+
 - bump tzingo -> 1.2.10 (dependabot)
 - Turn validation of enums back on.
 - Mods to plugin validator to fix import problems.
@@ -90,8 +110,10 @@
   Entries in the global list are now commented out, and Joel will progressively
   uncomment them.
 - Moved `dataset.json` to `raw` or `src_*` directory for CODEX datasets.
+- Modify IMC docs
 
 ## v0.0.13 - 2022-01-07
+
 - Make more fields explicitly numeric
 - Add more donor field descriptions.
 - Deprecate contributors-v0.
@@ -119,7 +141,7 @@
 - Work around mypy importlib type hinting problem.
 - Longer assay description for LCMS, and supporting machinery.
 - In CI, pin to older Ubuntu version to avoid SSL problems with Uniprot.
-- Level 1 description of assay_category: Updated "3" assay categories to "4". 
+- Level 1 description of assay_category: Updated "3" assay categories to "4".
 - Added imaging mass spec.
 - Work around mypy importlib type hinting problem.
 - Antibodies validation is broken; Move test out the way.
@@ -128,7 +150,7 @@
 - Explain allowed values for booleans.
 - Update the lcms schema field "lc_temp_value" optional
 - Switch to Github CI.
-- `cell_barcode_read` description: comma-delimitted. 
+- `cell_barcode_read` description: comma-delimitted.
 - Update the lcms schema field "lc_temp_value" optional.
 - Hit a different URL for ORCID, that will not give us soft 404s.
 - In bash scripts, make python3 explicit.
@@ -143,6 +165,7 @@
 - Upgrade from dependabot.
 
 ## v0.0.12 - 2021-07-23
+
 - Catch unrecognized keys in dir schema.
 - Ammend LCMS docs.
 - Fix CI: point to right branch.
@@ -187,6 +210,7 @@
 - Rearrange YAML so static processing works.
 
 ## v0.0.11 - 2021-05-18
+
 - Updated AF and stained microscopy structure schema.
 - Updated CODEX directory structure schema.
 - No Donor and Tissue ID validation needed for HCA.
@@ -215,6 +239,7 @@
 - Replace "submission" with "upload".
 
 ## v0.0.10 - 2021-04-21
+
 - Remove inappropriate syntax highlighting from CLI docs.
 - Fix bug in report generation.
 - Remove contributors_path from HCA.
@@ -252,6 +277,7 @@
 - Generate a report about the metadata values used in Elasticsearch.
 
 ## v0.0.9 - 2021-03-16
+
 - Fix typo in CellDIVE.
 - Update CLI usage to highlight sample validation.
 - Update lightsheet docs.
@@ -284,6 +310,7 @@
 - Clarify guidelines for direction schemas.
 
 ## v0.0.8 - 2021-02-10
+
 - Update CODEX directory structure
 - Allow "X" as final character of ORCID.
 - Ping the respective services to confirm the ORCIDs, RR IDs, and Uniprot IDs are actually good.
@@ -309,6 +336,7 @@
 - Add channel_id description to CellDIVE
 
 ## v0.0.7 - 2021-01-13
+
 - Improved error messages in Excel.
 - Define donor terms.
 - Update MALDI terms.
@@ -326,6 +354,7 @@
 - Loosen ID regex to allow lymph nodes. (Chuck's mistake!)
 
 ## v0.0.6 - 2020-12-07
+
 - Add thumbnail to directory schema.
 - Add machinery to include regex examples in docs.
 - Run mypy, but only on the one file that has type annotations.
@@ -351,6 +380,7 @@
 - Test validation of antibodies.tsv
 
 ## v0.0.5 - 2020-11-09
+
 - Change "mixif" to "mxif".
 - Expose sample field descriptions for use in portal.
 - Add missing assay type to enum.
@@ -382,7 +412,9 @@
 - Add passing contributors.tsv
 
 ## v0.0.4 - 2020-06-26
+
 ### Added
+
 - Add Sample field descriptions.
 - Change to "validate_samples".
 - Get enums in sync, and doctest the logic.
@@ -405,7 +437,9 @@
 - Dump unified yaml for each type. (This will be pulled on the portal side.)
 - Add enum constraints to unit fields, and replace TODOs.
 - Check that directory schemas exist.
+
 ### Changed
+
 - Simplified directory validation.
 - mass -> mz.
 - bulkrnaseq QA is just RIN.
@@ -423,18 +457,24 @@
 - More explicit label for patterns in MD.
 - TSV filenames match what will be required downstream.
 - IMS -> MALDI-IMS
+
 ### Removed
+
 - avg_insert_size from bulkatacseq.
 
 ## [v0.0.3](https://github.com/hubmapconsortium/ingest-validation-tools/tree/v0.0.3) - 2020-05-04
+
 ### Added
+
 - Additional scrnaseq types and columns.
 - Add a number of Assay types for Vanderbilt.
 - Friendlier error if data_path is missing.
 - Add polysaccharides as analyte_class.
 - Ignore glob patterns and not just fixed files.
-If other patterns are given, dot-files must be explicitly ignored.
+  If other patterns are given, dot-files must be explicitly ignored.
+
 ### Changed
+
 - Remove parenthesis from assay type.
 - Assume Latin-1 encoding for TSVs rather than UTF-8.
 - Update LC-MS fields.
@@ -444,7 +484,9 @@ If other patterns are given, dot-files must be explicitly ignored.
 - Tweak LCMS fields.
 
 ## [v0.0.2](https://github.com/hubmapconsortium/ingest-validation-tools/tree/v0.0.2) - 2020-04-25
+
 ### Added
+
 - Mirror Globus directory to local cache.
 - Fix `--type_metadata` so it still works without a submission directory.
 - Add `--optional_fields` to temporarily ignore the given fields.
@@ -452,7 +494,9 @@ If other patterns are given, dot-files must be explicitly ignored.
 - Ignore dot-files. No command-line option to enable stricter validation, for now.
 - Add scrnaseq.
 - Open error report in browser.
+
 ### Changed
+
 - Make the ATACseq validation more flexible.
 - Less confusing representation of enums in docs.
 - Allow lower level schemas to override aspects of the Level 1 schema.
@@ -461,7 +505,9 @@ If other patterns are given, dot-files must be explicitly ignored.
 - Update CODEX directory schema to match what is actually delivered.
 
 ## [v0.0.1](https://github.com/hubmapconsortium/ingest-validation-tools/tree/v0.0.1) - 2020-04-13
+
 ### Added
+
 - Validate structure of Akoya CODEX submissions.
 - Generate submission template.
 - Check that fixture-based tests actually ran.
@@ -493,7 +539,9 @@ If other patterns are given, dot-files must be explicitly ignored.
 - seqfish
 - Deeply structured YAML error reports.
 - Check for multiply referenced, or unreferenced paths.
+
 ### Changed
+
 - CSV -> TSV
 - Make the schema validation errors more readable
 - Doctests are scanned from directory, rather than read from single file.

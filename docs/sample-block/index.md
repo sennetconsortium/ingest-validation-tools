@@ -1,7 +1,7 @@
 ---
-title: sample-block
+title: Sample Block
 schema_name: sample-block
-category: Other TSVs
+category: Sample
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
@@ -9,47 +9,21 @@ layout: default
 
 Related files:
 
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/sample-block/sample-block.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/sample-block/sample-block.tsv): Alternative for metadata entry.
 
-
-
+- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/sample-block/latest/sample-block.xlsx): For metadata entry.
+- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/sample-block/latest/sample-block.tsv): Alternative for metadata entry.
 
 
 
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
+
+<summary><a href="https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2F22bc762a-5020-419d-b170-24253ed9e8d9"><b>Version 2 (use this one)</b></a></summary>
 
 
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
+<details markdown="1" ><summary><b>Version 1</b></summary>
 
-<blockquote markdown="1">
-
-[`version`](#version)<br>
-[`sample_id`](#sample_id)<br>
-[`type`](#type)<br>
-[`source_storage_time_value`](#source_storage_time_value)<br>
-[`source_storage_time_unit`](#source_storage_time_unit)<br>
-[`weight_value`](#weight_value)<br>
-[`weight_unit`](#weight_unit)<br>
-[`volume_value`](#volume_value)<br>
-[`volume_unit`](#volume_unit)<br>
-[`pathology_distance_value`](#pathology_distance_value)<br>
-[`pathology_distance_unit`](#pathology_distance_unit)<br>
-[`preparation_media`](#preparation_media)<br>
-[`preparation_condition`](#preparation_condition)<br>
-[`processing_time_value`](#processing_time_value)<br>
-[`processing_time_unit`](#processing_time_unit)<br>
-[`storage_media`](#storage_media)<br>
-[`storage_method`](#storage_method)<br>
-[`quality_criteria`](#quality_criteria)<br>
-[`histological_report`](#histological_report)<br>
-[`notes`](#notes)<br>
-
-</blockquote>
 
 <a name="version"></a>
 ##### [`version`](#version)
@@ -233,4 +207,7 @@ Notes. Leave blank if not applicable.
 | required | `False` |
 
 </details>
+
+
+<br>
 

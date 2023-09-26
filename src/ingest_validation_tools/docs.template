@@ -9,19 +9,15 @@ layout: default
 
 Related files:
 ${optional_doc_link_md}
-- [📝 Excel template](${xlsx_url}): For metadata entry.
-- [📝 TSV template](${tsv_url}): Alternative for metadata entry.
+${related_files_section_md}
 
 ${optional_description_md}
 
-${optional_dir_description_md}
-
-${optional_portal_names_md}
-
 ## Metadata schema
-
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
 ${current_version_md}
 ${previous_versions_md}
+
+<br>
+
+${optional_dir_description_md}
