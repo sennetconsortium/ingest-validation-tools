@@ -122,6 +122,10 @@ data_path:
 - dataset
 data_precision_bytes:
 - dataset
+date_of_birth_or_fertilization:
+- murine
+date_of_death:
+- murine
 description:
 - dataset
 desi_solvent:
@@ -152,6 +156,8 @@ echo_train_length:
 - dataset
 end_datetime:
 - dataset
+euthanization_method:
+- murine
 execution_datetime:
 - dataset
 expected_cell_count:
@@ -196,6 +202,10 @@ ion_source:
 - dataset
 is_contact:
 - contributors
+is_deceased:
+- murine
+is_embryo:
+- murine
 is_targeted:
 - dataset
 is_technical_replicate:
@@ -482,6 +492,8 @@ sequencing_read_percent_q30:
 - dataset
 sequencing_reagent_kit:
 - dataset
+sex:
+- murine
 signal_type:
 - dataset
 single_file_export_format:
@@ -490,6 +502,8 @@ sn_quality:
 - dataset
 sn_quality_unit:
 - dataset
+source_id:
+- murine
 source_project:
 - dataset
 source_storage_time_unit:
@@ -522,6 +536,10 @@ storage_media:
 - sample
 storage_method:
 - sample
+strain:
+- murine
+strain_rrid:
+- murine
 suspension_enriched:
 - sample
 suspension_enriched_target:

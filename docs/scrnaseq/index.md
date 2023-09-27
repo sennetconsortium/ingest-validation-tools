@@ -329,11 +329,10 @@ State whether the library was generated for single-end or paired end sequencing.
 
 <a name="library_adapter_sequence"></a>
 ##### [`library_adapter_sequence`](#library_adapter_sequence)
-Adapter sequence to be used for adapter trimming. Example: `CTGTCTCTTATACACATCT`.
+Adapter sequence to be used for adapter trimming.
 
 | constraint | value |
 | --- | --- |
-| pattern (regular expression) | <code>[ATCG]+(\+[ATCG]+)?</code> |
 | required | `True` |
 
 <a name="library_id"></a>
