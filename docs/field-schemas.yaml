@@ -322,6 +322,10 @@ data_path:
 data_precision_bytes:
 - imc
 - mibi
+date_of_birth_or_fertilization:
+- murine-source
+date_of_death:
+- murine-source
 description:
 - af
 - bodyct
@@ -405,6 +409,8 @@ echo_train_length:
 end_datetime:
 - imc
 - mibi
+euthanization_method:
+- murine-source
 execution_datetime:
 - af
 - bodyct
@@ -481,6 +487,10 @@ ion_source:
 - gcms
 is_contact:
 - contributors
+is_deceased:
+- murine-source
+is_embryo:
+- murine-source
 is_targeted:
 - af
 - bulkatacseq
@@ -1245,6 +1255,8 @@ sequencing_reagent_kit:
 - scrnaseq-hca
 - slideseq
 - wgs
+sex:
+- murine-source
 signal_type:
 - imc
 - imc3d
@@ -1259,6 +1271,8 @@ sn_quality:
 - oct
 sn_quality_unit:
 - oct
+source_id:
+- murine-source
 source_project:
 - scrnaseq-hca
 source_storage_time_unit:
@@ -1306,6 +1320,10 @@ storage_method:
 - sample-block
 - sample-section
 - sample-suspension
+strain:
+- murine-source
+strain_rrid:
+- murine-source
 suspension_enriched:
 - sample-suspension
 suspension_enriched_target:
