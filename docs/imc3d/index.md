@@ -1,101 +1,29 @@
 ---
 title: 3D Imaging Mass Cytometry
 schema_name: imc3d
-category: Imaging mass spectrometry
+category: Imaging Mass Spectrometry (IMS)
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
 ---
 
 Related files:
-- [🔬 Background doc](https://portal.hubmapconsortium.org/docs/assays/imc): More details about this type.
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/imc3d/imc3d-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/imc3d/imc3d-metadata.tsv): Alternative for metadata entry.
-
-This schema is for 3 dimensional imaging mass cytometry (IMC 3D). 3D IMC uploads require metadata on the antibodies used in the assay to be provided in an Antibodies TSV. For 3D IMC, the `channel_id` is the name of the metal tag on the corresponding antibody.
-The other fields function the same way for all assays using antibodies. For more information, see the [Antibodies TSV documentation](../antibodies).
-
-## Directory schemas
-### v0
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>mcd/[^/]+_HuBMAP_[^/]+_slide[^/]+\.zip</code> | ✓ | CSV containing labels for sections as well as whether or not they were included in the 3D model. |
-| <code>mcd/section_report\.csv</code> | ✓ | **[QA/QC]** Contains tissue id, acquisition id, 3D image ordering, MCD image ordering, and boolean if used for 3D model. |
-| <code>mcd/channelnames_report\.csv</code> | ✓ | **[QA/QC]** Contains antibodies names used and whether they were detected sufficiently or not. |
-| <code>3D_image_stack\.ome\.tiff</code> | ✓ | OME.tiff file comprising all slices and channels. |
-| <code>SingleCellData/cells\.csv</code> | ✓ | Contains one csv file per tissue with marker intensities (untransformed, range normalized to 99th percentile), phenograph cluster label and cell type label per single cell. |
-| <code>SingleCellData/cellsinfo\.txt</code> |  | Text file containing formatting information about cells*organ*.csv. File is optional. |
-| <code>Mapping/cluster_labels_image\.tif</code> | ✓ | Cell image labeled by cell type. |
-| <code>processed/umap_phenograph\.pdf</code> |  | tSNE phenograph. File is optional. |
-| <code>processed/CellTypeComposition_perTissue\.pdf</code> |  | Cell type composition bar graph per tissue. File is optional. |
-| <code>processed/Densityplots_perMarker\.pdf</code> |  | **[QA/QC]** Density plots of marker intensity, separated by marker. File is optional. |
-| <code>processed/celltypes\.pdf</code> |  | Heatmap of marker expression per cluster, annotated by assigned cell type. File is optional. |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
 
 
 
-In the portal: 3D Imaging Mass Cytometry not in Portal
+
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
-
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
-
-<blockquote markdown="1">
-
-<details markdown="1"><summary>Shared by all types</summary>
-
-[`version`](#version)<br>
-[`description`](#description)<br>
-[`donor_id`](#donor_id)<br>
-[`tissue_id`](#tissue_id)<br>
-[`execution_datetime`](#execution_datetime)<br>
-[`protocols_io_doi`](#protocols_io_doi)<br>
-[`operator`](#operator)<br>
-[`operator_email`](#operator_email)<br>
-[`pi`](#pi)<br>
-[`pi_email`](#pi_email)<br>
-[`assay_category`](#assay_category)<br>
-[`assay_type`](#assay_type)<br>
-[`analyte_class`](#analyte_class)<br>
-[`is_targeted`](#is_targeted)<br>
-[`acquisition_instrument_vendor`](#acquisition_instrument_vendor)<br>
-[`acquisition_instrument_model`](#acquisition_instrument_model)<br>
-
-</details>
-<details markdown="1"><summary>Unique to this type</summary>
-
-[`preparation_instrument_vendor`](#preparation_instrument_vendor)<br>
-[`preparation_instrument_model`](#preparation_instrument_model)<br>
-[`section_prep_protocols_io_doi`](#section_prep_protocols_io_doi)<br>
-[`reagent_prep_protocols_io_doi`](#reagent_prep_protocols_io_doi)<br>
-[`number_of_channels`](#number_of_channels)<br>
-[`number_of_sections`](#number_of_sections)<br>
-[`ablation_distance_between_shots_x_value`](#ablation_distance_between_shots_x_value)<br>
-[`ablation_distance_between_shots_x_units`](#ablation_distance_between_shots_x_units)<br>
-[`ablation_distance_between_shots_y_value`](#ablation_distance_between_shots_y_value)<br>
-[`ablation_distance_between_shots_y_units`](#ablation_distance_between_shots_y_units)<br>
-[`ablation_frequency_value`](#ablation_frequency_value)<br>
-[`ablation_frequency_unit`](#ablation_frequency_unit)<br>
-[`roi_description`](#roi_description)<br>
-[`roi_id`](#roi_id)<br>
-[`acquisition_id`](#acquisition_id)<br>
-[`max_x_width_value`](#max_x_width_value)<br>
-[`max_x_width_unit`](#max_x_width_unit)<br>
-[`max_y_height_value`](#max_y_height_value)<br>
-[`max_y_height_unit`](#max_y_height_unit)<br>
-[`segment_data_format`](#segment_data_format)<br>
-[`signal_type`](#signal_type)<br>
-[`antibodies_path`](#antibodies_path)<br>
-[`contributors_path`](#contributors_path)<br>
-[`data_path`](#data_path)<br>
+<details markdown="1" open="true"><summary><s>Version 2 (current)</s> (deprecated)</summary>
+We do not expect to receive any new data of this assay type.
+If you are planning to submit new data of this assay type, reach out to help@hubmapconsortium.org.
 </details>
 
-</blockquote>
+
+<details markdown="1" ><summary><b>Version 1</b></summary>
+
 
 ### Shared by all types
 
@@ -459,6 +387,7 @@ Relative path to file or directory with instrument data. Downstream processing w
 </details>
 
 
+
 <details markdown="1" ><summary><b>Version 0</b></summary>
 
 
@@ -805,3 +734,25 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><b>Version 0 (use this one)</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>mcd/[^/]+_HuBMAP_[^/]+_slide[^/]+\.zip</code> | ✓ | CSV containing labels for sections as well as whether or not they were included in the 3D model. |
+| <code>mcd/section_report\.csv</code> | ✓ | **[QA/QC]** Contains tissue id, acquisition id, 3D image ordering, MCD image ordering, and boolean if used for 3D model. |
+| <code>mcd/channelnames_report\.csv</code> | ✓ | **[QA/QC]** Contains antibodies names used and whether they were detected sufficiently or not. |
+| <code>3D_image_stack\.ome\.tiff</code> | ✓ | OME.tiff file comprising all slices and channels. |
+| <code>SingleCellData/cells\.csv</code> | ✓ | Contains one csv file per tissue with marker intensities (untransformed, range normalized to 99th percentile), phenograph cluster label and cell type label per single cell. |
+| <code>SingleCellData/cellsinfo\.txt</code> |  | Text file containing formatting information about cells*organ*.csv. File is optional. |
+| <code>Mapping/cluster_labels_image\.tif</code> | ✓ | Cell image labeled by cell type. |
+| <code>processed/umap_phenograph\.pdf</code> |  | tSNE phenograph. File is optional. |
+| <code>processed/CellTypeComposition_perTissue\.pdf</code> |  | Cell type composition bar graph per tissue. File is optional. |
+| <code>processed/Densityplots_perMarker\.pdf</code> |  | **[QA/QC]** Density plots of marker intensity, separated by marker. File is optional. |
+| <code>processed/celltypes\.pdf</code> |  | Heatmap of marker expression per cluster, annotated by assigned cell type. File is optional. |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+

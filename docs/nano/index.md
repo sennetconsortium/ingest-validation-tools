@@ -1,7 +1,7 @@
 ---
 title: NanoDESI / NanoPOTS
 schema_name: nano
-category: Imaging mass spectrometry
+category: Imaging Mass Spectrometry (IMS)
 all_versions_deprecated: True
 exclude_from_index: False
 layout: default
@@ -9,34 +9,11 @@ layout: default
 
 Related files:
 
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/nano/nano-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/nano/nano-metadata.tsv): Alternative for metadata entry.
 
 
 
-## Directory schemas
-### v0
-<details markdown="1"><summary>Deprecated</summary>
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>Van[^/]</code> | ✓ | Main. |
-| <code>Raw data.imzML</code> | ✓ | imzML file containing all linscans information. |
-| <code>Peak assignment.csv</code> | ✓ | **[QA/QC]** CSV containing all identified peaks and their IDs. |
-| <code>Autofluorescence image.tif</code> | ✓ | A tif file of the autofluorescence image. |
-| <code>ion images</code> | ✓ | Folder containing PNG files. |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
-
-</details>
-
-
-
-In the portal: NanoDESI not in Portal / NanoPOTS not in Portal
 
 ## Metadata schema
-
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
 
 <details markdown="1" open="true"><summary><s>Version 1 (current)</s> (deprecated)</summary>
@@ -581,3 +558,21 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><b>Version 0 (use this one)</b></summary>
+<details markdown="1"><summary>Deprecated</summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>Van[^/]</code> | ✓ | Main. |
+| <code>Raw data.imzML</code> | ✓ | imzML file containing all linscans information. |
+| <code>Peak assignment.csv</code> | ✓ | **[QA/QC]** CSV containing all identified peaks and their IDs. |
+| <code>Autofluorescence image.tif</code> | ✓ | A tif file of the autofluorescence image. |
+| <code>ion images</code> | ✓ | Folder containing PNG files. |
+
+</details>
+

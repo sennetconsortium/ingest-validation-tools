@@ -1,83 +1,29 @@
 ---
 title: MxIF
 schema_name: mxif
-category: Imaging assays
+category: Multiplex Fluorescence Based Experiment (MxFBE)
 all_versions_deprecated: False
 exclude_from_index: False
 layout: default
 ---
 
 Related files:
-- [🔬 Background doc](https://portal.hubmapconsortium.org/docs/assays/mxif): More details about this type.
-- [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/mxif/mxif-metadata.xlsx): For metadata entry.
-- [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/mxif/mxif-metadata.tsv): Alternative for metadata entry.
-
-This schema is for multiplex immunofluorescence microscopy (MxIF).
-
-## Directory schemas
-### v0
-
-| pattern | required? | description |
-| --- | --- | --- |
-| <code>(Level0&#124;level0)_raw\/cyc_[\d]+\.(tif&#124;tiff)</code> | ✓ | **[QA/QC]** MxiF raw tile data by cycle and channel. |
-| <code>(Level0&#124;level0)_raw\/cyc_[\d]+\/tile_layout\.json</code> | ✓ | MxiF tile layout in pixel coordinates in x and y. |
-| <code>(Level0&#124;level0)_raw\/dataset\.json</code> | ✓ | Additional specific metadata. |
-| <code>(Level1&#124;level1)\/cyc_[\d]+\.ome\.(tif&#124;tiff)</code> | ✓ | Pre-processed stitched image files, but not registered across cycles. |
-| <code>(Level2&#124;level2)\/ome\.(tif&#124;tiff)</code> | ✓ | **[QA/QC]** Full lab processed data, stitched, registered, and saved in pyramidal OME-TIFF. |
-| <code>(Level2&#124;level2)_lab_final-processing\.pdf</code> | ✓ | **[QA/QC]** Description of the lab-processed data. |
-| <code>extras/.*</code> |  | Free-form descriptive information supplied by the TMC |
 
 
 
-In the portal: MxIF not in Portal
+This schema has been incorporated into the cycif schema which can be accessed [here](https://hubmapconsortium.github.io/ingest-validation-tools/cycif/).
 
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
-
-<details markdown="1" open="true"><summary><b>Version 1 (current)</b></summary>
-
-<blockquote markdown="1">
-
-<details markdown="1"><summary>Shared by all types</summary>
-
-[`version`](#version)<br>
-[`description`](#description)<br>
-[`donor_id`](#donor_id)<br>
-[`tissue_id`](#tissue_id)<br>
-[`execution_datetime`](#execution_datetime)<br>
-[`protocols_io_doi`](#protocols_io_doi)<br>
-[`operator`](#operator)<br>
-[`operator_email`](#operator_email)<br>
-[`pi`](#pi)<br>
-[`pi_email`](#pi_email)<br>
-[`assay_category`](#assay_category)<br>
-[`assay_type`](#assay_type)<br>
-[`analyte_class`](#analyte_class)<br>
-[`is_targeted`](#is_targeted)<br>
-[`acquisition_instrument_vendor`](#acquisition_instrument_vendor)<br>
-[`acquisition_instrument_model`](#acquisition_instrument_model)<br>
-
-</details>
-<details markdown="1"><summary>Unique to this type</summary>
-
-[`resolution_x_value`](#resolution_x_value)<br>
-[`resolution_x_unit`](#resolution_x_unit)<br>
-[`resolution_y_value`](#resolution_y_value)<br>
-[`resolution_y_unit`](#resolution_y_unit)<br>
-[`number_of_channels`](#number_of_channels)<br>
-[`number_of_cycles`](#number_of_cycles)<br>
-[`section_prep_protocols_io_doi`](#section_prep_protocols_io_doi)<br>
-[`reagent_prep_protocols_io_doi`](#reagent_prep_protocols_io_doi)<br>
-[`overall_protocols_io_doi`](#overall_protocols_io_doi)<br>
-[`antibodies_path`](#antibodies_path)<br>
-[`contributors_path`](#contributors_path)<br>
-[`data_path`](#data_path)<br>
+<details markdown="1" open="true"><summary><s>Version 2 (current)</s> (deprecated)</summary>
+We do not expect to receive any new data of this assay type.
+If you are planning to submit new data of this assay type, reach out to help@hubmapconsortium.org.
 </details>
 
-</blockquote>
+
+<details markdown="1" ><summary><b>Version 1</b></summary>
+
 
 ### Shared by all types
 
@@ -337,6 +283,7 @@ Relative path to file or directory with instrument data. Downstream processing w
 </details>
 
 
+
 <details markdown="1" ><summary><b>Version 0</b></summary>
 
 
@@ -579,3 +526,20 @@ Relative path to file or directory with instrument data. Downstream processing w
 | required | `True` |
 
 </details>
+
+
+<br>
+
+## Directory schemas
+<summary><b>Version 0 (use this one)</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>(Level0&#124;level0)_raw\/cyc_[\d]+\.(tif&#124;tiff)</code> | ✓ | **[QA/QC]** MxiF raw tile data by cycle and channel. |
+| <code>(Level0&#124;level0)_raw\/cyc_[\d]+\/tile_layout\.json</code> | ✓ | MxiF tile layout in pixel coordinates in x and y. |
+| <code>(Level0&#124;level0)_raw\/dataset\.json</code> | ✓ | Additional specific metadata. |
+| <code>(Level1&#124;level1)\/cyc_[\d]+\.ome\.(tif&#124;tiff)</code> | ✓ | Pre-processed stitched image files, but not registered across cycles. |
+| <code>(Level2&#124;level2)\/ome\.(tif&#124;tiff)</code> | ✓ | **[QA/QC]** Full lab processed data, stitched, registered, and saved in pyramidal OME-TIFF. |
+| <code>(Level2&#124;level2)_lab_final-processing\.pdf</code> | ✓ | **[QA/QC]** Description of the lab-processed data. |
+| <code>extras\/.*</code> |  | Folder for general lab-specific files related to the dataset. [Exists in all assays] |
+

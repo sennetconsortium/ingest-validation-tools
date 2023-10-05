@@ -9,24 +9,19 @@ layout: default
 
 Related files:
 
+
 - [📝 Excel template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/antibodies/antibodies.xlsx): For metadata entry.
 - [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/ingest-validation-tools/main/docs/antibodies/antibodies.tsv): Alternative for metadata entry.
+
 
 Changes:
 - v1: Version number added.
 - v2: Add concentration fields.
 
-
-
-
-
 ## Metadata schema
 
-### Field types
-- *Boolean* fields can be given as `TRUE`/`FALSE`, `True`/`False`, `true`/`false`, or `1`/`0`.  
 
-
-<details markdown="1" open="true"><summary><b>Version 2 (current)</b></summary>
+<details markdown="1" open="true"><summary><b>Version 2 (use this one)</b></summary>
 
 <blockquote markdown="1">
 
@@ -299,3 +294,7 @@ The name of the entity conjugated to the antibody. Leave blank if not applicable
 | required | `False` |
 
 </details>
+
+
+<br>
+
