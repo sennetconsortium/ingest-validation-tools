@@ -1,4 +1,10 @@
 # Changelog
+## v0.0.17 - in progress
+- Fixed formatting of listed enums in donor-v0.yaml to allow validation to run without 500 error
+- Update to frictionless 4.40.9 for better error message formatting
+- Updated regex for `donor_id` and `tissue_id`
+- Added murine source spec
+- Removed regular expression contraints from library_adapter_sequence in snRNA-seq schema
 
 ## v0.0.16 - in progress
 
