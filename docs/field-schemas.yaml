@@ -126,6 +126,7 @@ area_value:
 assay_category:
 - 10x-multiome
 - af
+- atacseq
 - bodyct
 - bulkatacseq
 - bulkrnaseq
@@ -155,12 +156,12 @@ assay_category:
 - mri
 - mxif
 - nano
-- nano-desi
+- nano-splits
 - oct
 - organ
 - phenocycler
+- rnaseq
 - rnaseq-geomx
-- rnaseq-visium
 - sample
 - sample-block
 - sample-section
@@ -181,6 +182,7 @@ assay_category:
 assay_type:
 - 10x-multiome
 - af
+- atacseq
 - bodyct
 - bulkatacseq
 - bulkrnaseq
@@ -210,13 +212,13 @@ assay_type:
 - mri
 - mxif
 - nano
-- nano-desi
+- nano-splits
 - oct
 - organ
 - phenocycler
 - publication
+- rnaseq
 - rnaseq-geomx
-- rnaseq-visium
 - sample
 - sample-block
 - sample-section
@@ -549,9 +551,8 @@ ion_source:
 is_cedar:
 - 10x-multiome
 - af
+- atacseq
 - bodyct
-- bulkatacseq
-- bulkrnaseq
 - celldive
 - cems
 - codex
@@ -578,20 +579,17 @@ is_cedar:
 - microct
 - mri
 - mxif
-- nano-desi
+- nano-splits
 - oct
 - organ
 - phenocycler
 - publication
+- rnaseq
 - rnaseq-geomx
-- rnaseq-visium
 - sample
 - sample-block
 - sample-section
 - sample-suspension
-- scatacseq
-- scrnaseq
-- scrnaseq-hca
 - second-harmonic-generation
 - seqfish
 - sims
@@ -978,9 +976,8 @@ overall_protocols_io_doi:
 parent_id:
 - 10x-multiome
 - af
+- atacseq
 - bodyct
-- bulkatacseq
-- bulkrnaseq
 - celldive
 - cems
 - codex
@@ -1004,15 +1001,11 @@ parent_id:
 - microct
 - mri
 - mxif
-- nano-desi
 - oct
 - phenocycler
 - publication
+- rnaseq
 - rnaseq-geomx
-- rnaseq-visium
-- scatacseq
-- scrnaseq
-- scrnaseq-hca
 - second-harmonic-generation
 - seqfish
 - sims
