@@ -65,9 +65,6 @@ fields:
 # include: ../includes/fields/library_layout.yaml
 - name: library_adapter_sequence
   description: Adapter sequence to be used for adapter trimming
-  constraints:
-    pattern: '[ATCG]+(\+[ATCG]+)?'
-  example: 'CTGTCTCTTATACACATCT'
 # include: ../includes/fields/library_id.yaml
 - name: is_technical_replicate
   description: Is the sequencing reaction run in replicate, TRUE or FALSE
