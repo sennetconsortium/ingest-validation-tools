@@ -199,6 +199,7 @@ def get_tsv_errors(
     report_type: ReportType = ReportType.STR,
     globus_token: str = "",
     cedar_api_key: str = "",
+    app_context: Union[dict, None] = None,
 ) -> Union[Dict[str, str], List[str]]:
     """
     Validate the TSV.
@@ -279,6 +280,7 @@ def get_tsv_errors(
 
         upload = Upload(
             Path(tsv_path).parent, token=globus_token, cedar_api_key=cedar_api_key
+            , app_context=app_context
         )
         errors = upload.api_validation(Path(tsv_path), report_type)
         schema_version = SchemaVersion(schema_name, version)
