@@ -41,6 +41,7 @@
 - Update LCMS and add NanoSplits
 - Update descriptions for segmentation masks
 - Add description to codex doc page
+- Fix to support display of errors for CEDAR template metadata
 
 ## v0.0.15 - 2023-04-04
 
