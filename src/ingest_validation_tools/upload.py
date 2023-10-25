@@ -434,8 +434,13 @@ class Upload:
                     )
                     response.raise_for_status()
                 except Exception as e:
+                    if e.response is not None:
+                        json = e.response.json()
+                        msg = json['error'] if 'error' in json else json
+                    else:
+                        msg = e
                     url_errors.append(
-                        f"Row {i+2}, field '{field}' with value '{url}': {e}"
+                        f"Row {i+2}, field \"{field}\" with value '{url}': {msg}"
                     )
         return url_errors
 
