@@ -111,6 +111,8 @@ def get_table_schema_version_from_row(
             if cedar_schema:
                 return cedar_schema
     message = f"No schema where '{assay}' is assay_type and {version} is version"
+
+    #TODO: This doesn't seem to do anything ... investigate
     raise PreflightError(message)
 
 
@@ -126,6 +128,8 @@ def _get_cedar_schema(
         for schema_file in os.listdir(dir_path)
         if schema_file.startswith(schema_name.lower())
     ]
+    # Sorting because the list can appear differently on different host machines ...
+    schema_files.sort(reverse=True)
     for schema_path in schema_files:
         schema = load_yaml(Path(schema_path))
         fields = get_fields_wo_headers(schema)
@@ -142,13 +146,32 @@ def _get_cedar_schema(
             for field in fields
             if field["name"] == "assay_type"
         ][0]
-        assert assay.lower() in [
+
+        # This assert block is stopping execution on first mismatch, should ideally continue through end
+        # assert assay.lower() in [
+        #     enum.lower() for enum in assay_type_enums
+        # ], f"""
+        #     Assay type '{assay}' does not match any assay type in
+        #     enum '{assay_type_enums}' for schema {schema_path}
+        #     """
+
+        # Return if found ...
+        if assay.lower() in [
             enum.lower() for enum in assay_type_enums
-        ], f"""
-            Assay type '{assay}' does not match any assay type in
-            enum '{assay_type_enums}' for schema {schema_path}
-            """
-        return SchemaVersion(schema_name, version)
+        ]:
+            return SchemaVersion(schema_name, version)
+
+    if len(schema_files) > 0:
+        msg_files = [
+            schema_path.replace(f"{dir_path}/", '')
+            for schema_path in schema_files
+            if True
+        ]
+
+        assert False, f"""
+            Assay type \"{assay}\" does not match any assay type in
+            enums for schemas {', '.join(msg_files)}
+        """
     return None
 
 
