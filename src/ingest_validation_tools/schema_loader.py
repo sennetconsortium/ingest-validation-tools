@@ -112,7 +112,7 @@ def get_table_schema_version_from_row(
                 return cedar_schema
     message = f"No schema where '{assay}' is assay_type and {version} is version"
 
-    #TODO: This doesn't seem to do anything ... investigate
+    # TODO: This doesn't seem to do anything ... investigate
     raise PreflightError(message)
 
 
