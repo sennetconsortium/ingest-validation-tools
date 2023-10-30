@@ -60,6 +60,7 @@ class Upload:
         extra_parameters: Union[dict, None] = None,
         token: str = "",
         cedar_api_key: str = "",
+        app_context: Union[dict, None] = None,
     ):
         self.directory_path = directory_path
         self.optional_fields = optional_fields
@@ -75,6 +76,13 @@ class Upload:
         self.extra_parameters = extra_parameters if extra_parameters else {}
         self.auth_tok = token
         self.cedar_api_key = cedar_api_key
+
+        if app_context is None:
+            app_context = {
+                'entities_url': 'https://entity.api.hubmapconsortium.org/entities/',
+                'request_header': {'X-Hubmap-Application': 'ingest-pipeline'}
+            }
+        self.app_context = app_context
 
         try:
             unsorted_effective_tsv_paths = {
@@ -384,14 +392,14 @@ class Upload:
         schema_name = schema_version.schema_name
 
         if "sample" in schema_name:
-            constrained_fields['sample_id'] = "https://entity.api.hubmapconsortium.org/entities/"
+            constrained_fields['sample_id'] = self.app_context.get('entities_url')
         elif "organ" in schema_name:
-            constrained_fields['organ_id'] = "https://entity.api.hubmapconsortium.org/entities/"
+            constrained_fields['organ_id'] = self.app_context.get('entities_url')
         elif "contributors" in schema_name:
             constrained_fields['orcid_id'] = "https://pub.orcid.org/v3.0/"
         else:
             constrained_fields['parent_sample_id'] = \
-                "https://entity.api.hubmapconsortium.org/entities/"
+                self.app_context.get('entities_url')
 
         url_errors = self._check_matching_urls(tsv_path, constrained_fields)
         if url_errors:
@@ -418,17 +426,21 @@ class Upload:
             for field, url in check.items():
                 try:
                     url = constrained_fields[field] + url
+                    headers = self.app_context.get('request_header')
+                    headers["Authorization"] = f"Bearer {self.auth_tok}"
                     response = requests.get(
                         url,
-                        headers={
-                            "X-Hubmap-Application": "ingest-pipeline",
-                            "Authorization": f"Bearer {self.auth_tok}",
-                        },
+                        headers=headers,
                     )
                     response.raise_for_status()
                 except Exception as e:
+                    if e.response is not None:
+                        json = e.response.json()
+                        msg = json['error'] if 'error' in json else json
+                    else:
+                        msg = e
                     url_errors.append(
-                        f"Row {i+2}, field '{field}' with value '{url}': {e}"
+                        f"Row {i+2}, field \"{field}\" with value '{url}': {msg}"
                     )
         return url_errors
 
