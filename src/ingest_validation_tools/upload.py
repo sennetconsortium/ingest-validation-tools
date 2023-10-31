@@ -392,14 +392,19 @@ class Upload:
         schema_name = schema_version.schema_name
 
         if "sample" in schema_name:
-            constrained_fields['sample_id'] = self.app_context.get('entities_url')
+            constrained_fields[
+                "sample_id"
+            ] = self.app_context.get('entities_url')
         elif "organ" in schema_name:
-            constrained_fields['organ_id'] = self.app_context.get('entities_url')
+            constrained_fields[
+                "organ_id"
+            ] = self.app_context.get('entities_url')
         elif "contributors" in schema_name:
-            constrained_fields['orcid_id'] = "https://pub.orcid.org/v3.0/"
+            constrained_fields["orcid_id"] = "https://pub.orcid.org/v3.0/"
         else:
-            constrained_fields['parent_sample_id'] = \
-                self.app_context.get('entities_url')
+            constrained_fields[
+                "parent_sample_id"
+            ] = self.app_context.get('entities_url')
 
         url_errors = self._check_matching_urls(tsv_path, constrained_fields)
         if url_errors:
@@ -502,6 +507,7 @@ class Upload:
         schema_name: str,
         schema_version: str,
         metadata_path: Union[str, Path],
+        is_cedar: bool = False,
     ) -> Optional[Dict]:
         errors: Dict[
             str, Union[list, dict]
@@ -512,6 +518,7 @@ class Upload:
                 path,
                 schema_version,
                 dataset_ignore_globs=self.dataset_ignore_globs,
+                is_cedar=is_cedar,
             )
             if ref_errors:
                 # TODO: quote field name to match TSV error output;
@@ -524,7 +531,7 @@ class Upload:
                 offline=self.offline,
                 encoding=self.encoding,
                 ignore_deprecation=self.ignore_deprecation,
-                cedar_api_key=self.cedar_api_key
+                cedar_api_key=self.cedar_api_key,
             )
             # TSV located and read, errors found
             if tsv_ref_errors and isinstance(tsv_ref_errors, list):
@@ -559,6 +566,10 @@ class Upload:
             if not row.get(field):
                 continue
             data_path = self.directory_path / row[field]
+            if "metadata_schema_id" in rows[0]:
+                is_cedar = True
+            else:
+                is_cedar = False
             ref_error = self._check_path(
                 i,
                 data_path,
@@ -566,6 +577,7 @@ class Upload:
                 schema.schema_name,
                 schema.version,
                 metadata_path,
+                is_cedar=is_cedar,
             )
             if ref_error:
                 ref_errors.update(ref_error)
@@ -578,9 +590,7 @@ class Upload:
             | set(self.__get_antibodies_references().keys())
         )
 
-        referenced_data_paths = {
-            Path(path) for path in referenced_data_paths
-        }
+        referenced_data_paths = {Path(path) for path in referenced_data_paths}
 
         non_metadata_paths = {
             Path(path.name)
