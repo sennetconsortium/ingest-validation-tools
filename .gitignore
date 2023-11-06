@@ -111,6 +111,7 @@ celerybeat.pid
 
 # Environments
 .env
+.envrc
 .venv
 env/
 venv/
@@ -141,4 +142,5 @@ url-status-cache
 
 # PyCharm
 *.idea
+
 *.DS_Store
