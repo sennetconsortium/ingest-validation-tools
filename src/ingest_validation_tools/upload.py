@@ -38,7 +38,6 @@ class ErrorDictException(Exception):
     def __init__(self, errors):
         message = f"Halting compilation of errors after detecting the following errors: {errors}."
         super().__init__(message)
-        # This returns only the error that caused the exception.
         labeled_errors = {}
         labeled_errors["Fatal Exception"] = errors
         self.errors = labeled_errors
@@ -61,6 +60,7 @@ class Upload:
         globus_token: str = "",
         cedar_api_key: str = "",
         app_context: Union[dict, None] = None,
+        run_plugins: bool = False,
     ):
         self.directory_path = directory_path
         self.optional_fields = optional_fields
@@ -76,6 +76,7 @@ class Upload:
         self.extra_parameters = extra_parameters if extra_parameters else {}
         self.auth_tok = globus_token
         self.cedar_api_key = cedar_api_key
+        self.run_plugins = run_plugins
 
         if app_context is None:
             app_context = {
@@ -165,6 +166,11 @@ class Upload:
             reference_errors = self._get_reference_errors()
             if reference_errors:
                 errors["Reference Errors"] = reference_errors
+
+            if errors and not self.run_plugins:
+                raise ErrorDictException(
+                    "Skipping plugins validation: errors in upload metadata or dir structure."
+                )
 
             plugin_errors = self._get_plugin_errors(**kwargs)
             if plugin_errors:

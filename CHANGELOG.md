@@ -44,6 +44,7 @@
 - Add description to codex doc page
 - Fix to support display of errors for CEDAR template metadata
 - Bugfix for directory schema location
+- Bail earlier in validation if there are errors in metadata/dir/refs
 
 ## v0.0.15 - 2023-04-04
 
