@@ -284,7 +284,7 @@ def get_tsv_errors(
         from ingest_validation_tools.upload import Upload
 
         upload = Upload(
-            Path(tsv_path).parent, token=globus_token, cedar_api_key=cedar_api_key
+            Path(tsv_path).parent, globus_token=globus_token, cedar_api_key=cedar_api_key
             , app_context=app_context
         )
         errors = upload.api_validation(Path(tsv_path), report_type)
