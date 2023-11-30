@@ -619,29 +619,18 @@ class Upload:
         return errors
 
     def _get_ref_errors(
-        self,
-        ref: str,
-        schema: SchemaVersion,
-        metadata_path: Union[str, Path],
+            self,
+            ref: str,
+            schema: SchemaVersion,
+            metadata_path: Union[str, Path],
     ):
         ref_errors: DefaultDict[str, list] = defaultdict(list)
         for i, row in enumerate(schema.rows):
             field = f"{ref}_path"
             if not row.get(field):
                 continue
-            data_path = self.directory_path / row[field]
-            if "metadata_schema_id" in rows[0]:
-                is_cedar = True
-            else:
-                is_cedar = False
-            ref_error = self._check_path(
-                i,
-                data_path,
-                ref,
-                schema,
-                metadata_path,
-                is_cedar=is_cedar,
-            )
+            ref_path = self.directory_path / row[field]
+            ref_error = self._check_path(i, ref_path, ref, schema, metadata_path)
             if ref_error:
                 ref_errors.update(ref_error)
         return ref_errors
