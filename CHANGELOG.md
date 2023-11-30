@@ -45,6 +45,23 @@
 - Fix to support display of errors for CEDAR template metadata
 - Bugfix for directory schema location
 - Bail earlier in validation if there are errors in metadata/dir/refs
+- Update Antibodies
+- Remove NanoSplits
+- Update hifi, mibi, imc
+- Fix imc-2d docs
+- Fix imc-2d dir docs
+- Add link to OME-Tiff docs
+- Remove WGS, CE-MS, GC-MS, and RNAseq (GeoMx)
+- Update histology and segmentation mask directory schemas
+- Update hifi-slide to hifi-slides
+- Fix changelog error
+- Fix CI
+- Update MIBI and IMC2D directory schemas
+- Fix to support display of errors for CEDAR template metadata
+- Upate Auto-fluorescence, Confocal, and Light Sheet directory schemas
+- Additional updates to next-gen histology directory schema
+- Implemented soft assay types/assayclassifier endpoint for canonical assay names and dir structures
+- Added mock response test data for offline testing
 
 ## v0.0.15 - 2023-04-04
 
