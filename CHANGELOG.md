@@ -63,6 +63,10 @@
 - Implemented soft assay types/assayclassifier endpoint for canonical assay names and dir structures
 - Added mock response test data for offline testing
 - Add more assays
+- Correct Auto-fluorescence lab_processed/annotations path description
+- Add Visium with probes next-gen directory schema
+- Update MALDI, SIMS, DESI, Visium no probes, and HiFi-Slide directory schemas
+- Fix paths in Histology, MIBI, IMC2D, AF, Confocal, Light Sheet, and Visium with probes directory schemas
 
 ## v0.0.15 - 2023-04-04
 
@@ -101,6 +105,7 @@
 - Update MALDI, SIMS, and CODEX
 - Update DESI and remove NanoDESI
 - Support for conditional directory validation
+
 
 ## v0.0.14 - 2022-06-23
 
