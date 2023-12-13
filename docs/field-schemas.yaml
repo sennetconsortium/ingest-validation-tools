@@ -140,7 +140,6 @@ assay_category:
 - desi
 - enhanced-srs
 - gcms
-- geomx
 - geomx-ncounter
 - geomx-ngs
 - hifi-slide
@@ -161,7 +160,6 @@ assay_category:
 - nano
 - nano-splits
 - oct
-- organ
 - phenocycler
 - rnaseq
 - rnaseq-with-probes
@@ -176,6 +174,7 @@ assay_category:
 - seqfish
 - sims
 - slideseq
+- snareseq2
 - stained
 - thick-section-multiphoton-mxif
 - ultrasound
@@ -200,7 +199,6 @@ assay_type:
 - desi
 - enhanced-srs
 - gcms
-- geomx
 - geomx-ncounter
 - geomx-ngs
 - hifi-slide
@@ -221,7 +219,6 @@ assay_type:
 - nano
 - nano-splits
 - oct
-- organ
 - phenocycler
 - publication
 - rnaseq
@@ -237,6 +234,7 @@ assay_type:
 - seqfish
 - sims
 - slideseq
+- snareseq2
 - stained
 - thick-section-multiphoton-mxif
 - ultrasound
@@ -571,7 +569,6 @@ is_cedar:
 - dbit
 - desi
 - enhanced-srs
-- geomx
 - geomx-ncounter
 - geomx-ngs
 - hifi-slide
@@ -587,10 +584,8 @@ is_cedar:
 - mibi
 - microct
 - mri
-- mxif
 - nano-splits
 - oct
-- organ
 - phenocycler
 - publication
 - rnaseq
@@ -603,6 +598,7 @@ is_cedar:
 - seqfish
 - sims
 - slideseq
+- snareseq2
 - stained
 - thick-section-multiphoton-mxif
 - ultrasound
@@ -995,7 +991,6 @@ parent_id:
 - dbit
 - desi
 - enhanced-srs
-- geomx
 - imc-2d
 - lcms
 - lightsheet
@@ -1005,7 +1000,6 @@ parent_id:
 - mibi
 - microct
 - mri
-- mxif
 - oct
 - phenocycler
 - publication

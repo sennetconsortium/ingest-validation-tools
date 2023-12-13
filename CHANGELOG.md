@@ -67,6 +67,17 @@
 - Add Visium with probes next-gen directory schema
 - Update MALDI, SIMS, DESI, Visium no probes, and HiFi-Slide directory schemas
 - Fix paths in Histology, MIBI, IMC2D, AF, Confocal, Light Sheet, and Visium with probes directory schemas
+- Add CODEX, Thick section Multiphoton MxIF, Second Harmonic Generation, and Enhanced Stimulated Raman Spectroscopy (SRS) next-gen directory schemas
+- Move Thick section Multiphoton MxIF next-gen directory schema to placeholder file
+- Update file path in Visium no probes, Histology, AF, MxIF, SHG, SRS, Confocal, Light Sheet, MALDI, SIMS, DESI
+- Remove Organ CEDAR page
+- Draft next-gen directory schema for SNARE-seq2
+- Added multi-assay support
+- Delete GeoMX
+- Update soft typing to use hyphen, not underscore
+- Add SNARE-seq2 and RNAseq with probes next-gen directory schema
+- Remove the draft tag from SNARE-seq2
+- Regenerate docs for SNARE-seq2
 
 ## v0.0.15 - 2023-04-04
 
@@ -105,7 +116,6 @@
 - Update MALDI, SIMS, and CODEX
 - Update DESI and remove NanoDESI
 - Support for conditional directory validation
-
 
 ## v0.0.14 - 2022-06-23
 
