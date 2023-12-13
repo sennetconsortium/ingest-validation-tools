@@ -108,9 +108,6 @@ class Upload:
         ).strip()
 
         try:
-            # TODO: this previously returned a list of dir schema versions;
-            # it has been converted to return a single dir_schema filename--
-            # is this problematic for any reason?
             effective_tsvs = {
                 Path(path).name: {
                     "Schema": sv.table_schema,
@@ -159,6 +156,8 @@ class Upload:
                 raise ErrorDictException(
                     "Skipping plugins validation: errors in upload metadata or dir structure."
                 )
+            elif self.run_plugins:
+                logging.info("Running plugin validation...")
 
             plugin_errors = self._get_plugin_errors(**kwargs)
             if plugin_errors:
@@ -618,52 +617,61 @@ class Upload:
 
     def _check_path(
         self,
-        i: int,
         path: Path,
         ref: str,
         schema_version: SchemaVersion,
         metadata_path: Union[str, Path],
     ) -> Optional[Dict]:
-        # TODO: it's weird that this method does two wildly different things; fix
-        errors: Dict[
-            str, Union[list, dict]
-        ] = {}  # This is very ugly but makes mypy happy
         if ref == "data":
-            if not schema_version.dir_schema:
-                raise Exception(
-                    f"No directory schema found for data_path {path} in {metadata_path}!"
-                )
-            ref_errors = get_data_dir_errors(
-                schema_version.dir_schema,
-                path,
-                dataset_ignore_globs=self.dataset_ignore_globs,
+            errors = self._check_data_path(
+                schema_version, Path(metadata_path), Path(path)
             )
-            if ref_errors:
-                # TODO: quote field name to match TSV error output;
-                # will break tests
-                errors[f"{metadata_path}, row {i+2}, column {ref}_path"] = ref_errors
-        # TODO: this is all to support other types, should probably be broken out
         else:
-            try:
-                schema = get_schema_version(
-                    path,
-                    self.encoding,
-                    self.globus_token,
-                    self.directory_path,
-                )
-            except Exception as e:
-                errors[f"{str(metadata_path)}, row {i+2}, column '{ref}_path'"] = [e]
-                return errors
-            tsv_ref_errors = self.validation_routine(tsv_paths={str(path): schema})
-            # TSV located and read, errors found
-            if tsv_ref_errors and isinstance(tsv_ref_errors, list):
-                errors[f"{path}"] = tsv_ref_errors
-            # Problem with TSV
-            elif tsv_ref_errors and isinstance(tsv_ref_errors, dict):
-                errors[
-                    f"{metadata_path} row {i+2}, column '{ref}_path'"
-                ] = tsv_ref_errors
+            errors = self._check_other_path(Path(metadata_path), Path(path), ref)
         return errors
+
+    def _check_data_path(
+        self, schema_version: SchemaVersion, metadata_path: Path, data_path: Path
+    ):
+        errors = {}
+        if not schema_version.dir_schema:
+            raise Exception(
+                f"No directory schema found for data_path {data_path} in {metadata_path}!"
+            )
+        ref_errors = get_data_dir_errors(
+            schema_version.dir_schema,
+            data_path,
+            dataset_ignore_globs=self.dataset_ignore_globs,
+        )
+        if ref_errors:
+            errors[
+                f"{metadata_path}, column 'data_path', value '{data_path}'"
+            ] = ref_errors
+        return errors
+
+    def _check_other_path(self, metadata_path: Path, other_path: Path, path_type: str):
+        errors = {}
+        try:
+            schema = get_schema_version(
+                other_path,
+                self.encoding,
+                self.globus_token,
+                self.directory_path,
+            )
+        except Exception as e:
+            errors[
+                f"{metadata_path}, column '{path_type}_path', value '{other_path}'"
+            ] = [e]
+            return errors
+        tsv_ref_errors = self.validation_routine(tsv_paths={str(other_path): schema})
+        # TSV located and read, errors found
+        if tsv_ref_errors and isinstance(tsv_ref_errors, list):
+            errors[f"{other_path}"] = tsv_ref_errors
+        # Problem with TSV
+        elif tsv_ref_errors and isinstance(tsv_ref_errors, dict):
+            errors[
+                f"{metadata_path}, column '{path_type}_path', value '{other_path}'"
+            ] = tsv_ref_errors
 
     def _get_ref_errors(
         self,
@@ -672,15 +680,15 @@ class Upload:
         metadata_path: Union[str, Path],
     ):
         ref_errors: DefaultDict[str, list] = defaultdict(list)
-        for i, row in enumerate(schema.rows):
+        unique_paths = set()
+        for row in schema.rows:
             field = f"{ref}_path"
             if not row.get(field):
                 continue
-            ref_path = self.directory_path / row[field]
-            # TODO: _check_path is really slamming the Metadata Validator API with the
-            # contributors.tsv; gather unique values from contributors/antibodies
-            # and validate once per?
-            ref_error = self._check_path(i, ref_path, ref, schema, metadata_path)
+            unique_paths.update(row[field])
+        for path in unique_paths:
+            ref_path = self.directory_path / path
+            ref_error = self._check_path(ref_path, ref, schema, metadata_path)
             if ref_error:
                 ref_errors.update(ref_error)
         return ref_errors

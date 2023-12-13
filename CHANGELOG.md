@@ -70,6 +70,7 @@
 - Add SNARE-seq2 and RNAseq with probes next-gen directory schema
 - Remove the draft tag from SNARE-seq2
 - Regenerate docs for SNARE-seq2
+- Update "other" type validation to prevent continuous contributors.tsv validation
 
 ## v0.0.15 - 2023-04-04
 
