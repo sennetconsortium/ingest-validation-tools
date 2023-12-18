@@ -335,6 +335,7 @@ def get_tsv_errors(
         optional_fields=optional_fields,
         globus_token=globus_token,
         offline=offline,
+        app_context=app_context,
         ignore_deprecation=ignore_deprecation,
     )
     errors = upload.validation_routine(report_type)

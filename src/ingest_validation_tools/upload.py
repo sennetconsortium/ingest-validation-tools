@@ -571,7 +571,7 @@ class Upload:
                 try:
                     url = constrained_fields[field] + value
                     headers = self.app_context.get('request_header')
-                    headers["Authorization"] = f"Bearer {self.auth_tok}"
+                    headers["Authorization"] = f"Bearer {self.globus_token}"
                     response = requests.get(
                         url,
                         headers=headers,
