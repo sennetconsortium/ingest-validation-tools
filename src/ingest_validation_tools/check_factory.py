@@ -15,6 +15,7 @@ ErrorIterator = Iterator[frictionless.errors.CellError]
 Row = Dict[str, Any]
 Check = Callable[[Row], ErrorIterator]
 
+
 def make_checks(schema) -> List[Check]:
     factory = _CheckFactory(schema)
     return [
@@ -25,7 +26,7 @@ def make_checks(schema) -> List[Check]:
     ]
 
 
-class _CheckFactory():
+class _CheckFactory:
     def __init__(self, schema):
         self.schema = schema
         self._prev_value_run_length = {}
