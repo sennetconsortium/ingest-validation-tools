@@ -33,7 +33,7 @@ fields:
 - name: donor_id
   description: SenNet ID of the source (whole organism) of the assayed tissue.
   constraints:
-    pattern: '[A-Z]+\d{3}\.[A-Za-z]{4}\.\d{3}'
+    pattern: '[A-Z]+[0-9]+'
     required: true
   example: SNT123.ABCD.567
   custom_constraints:
@@ -42,7 +42,7 @@ fields:
 - name: tissue_id
   description: SenNet ID of the assayed tissue.
   constraints:
-    pattern: '[A-Z]+\d{3}\.[A-Za-z]{4}\.\d{3}'
+    pattern: (([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)(,([A-Z]+[0-9]+)-[A-Z]{2}\d*(-\d+)+(_\d+)?)*
     required: true
   example: SNT890.EFGH.321
   custom_constraints:
