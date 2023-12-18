@@ -122,7 +122,7 @@ dilution: Antibody solutions may be diluted according to the experimental protoc
 dms: Was differential mobility spectrometry used in this assay?
 dna_assay_input_unit: Units of DNA input into library preparation
 dna_assay_input_value: Amount of DNA input into library preparation
-donor_id: SenNet Display ID of the donor of the assayed tissue.
+donor_id: HuBMAP Display ID of the donor of the assayed tissue.
 dual_count_start: Threshold for dual counting.
 dynamic_contrast: 'Level of echo intensity on an ultrasound. Examples: none (blank)
   or 1-10.'
@@ -286,7 +286,7 @@ orcid_id: ORCID ID of contributor
 organ_condition: Health status of the organ at the time of sample recovery.
 organ_height_unit: Height unit.
 organ_height_value: The height value of the organ.
-organ_id: Unique SenNet identifier for the organ. This can be found in the Submission
+organ_id: Unique HuBMAP identifier for the organ. This can be found in the Submission
   ID section of a registered donor on the Ingest UI.
 organ_length_unit: Length unit.
 organ_length_value: The length value of the organ.
@@ -298,7 +298,7 @@ organ_weight_value: The total organ weight
 organ_width_unit: Width unit.
 organ_width_value: The width value of the organ.
 overall_protocols_io_doi: DOI for protocols.io for the overall process.
-parent_id: UUID or SenNet ID of parent
+parent_id: UUID or HuBMAP ID of parent
 parent_sample_id: UUID or HuBMAP ID of parent
 pathologist_report: Further details on organ level QC checks.
 pathology_distance_unit: Distance unit
@@ -381,7 +381,7 @@ room_temperature: The temperature value in Celsius of the room where the source 
   housed. An example is "23".
 rr_id: The rr_id is a unique antibody identifier that comes from the Antibody Registry
   (https://antibodyregistry.org).
-sample_id: UUID or SenNet ID of parent
+sample_id: UUID or HuBMAP ID of parent
 sample_quality_metric: "This is a quality metric by visual inspection. This should\
   \ answer the question: Are the nuclei intact and are the nuclei free of significant\
   \ amounts of debris? This can be captured at a high level, \u201COK\u201D or \u201C\
@@ -422,7 +422,7 @@ sn_quality: 'An integer describing the signal to noise quality of an OCT image (
 sn_quality_unit: 'The unit of the integer describing the signal to noise quality of
   an OCT image (Example: dB)'
 source_id: SenNet ID of the source (whole organism) of the assayed tissue.
-source_project: External source (outside of SenNet) of the project, eg. HCA (The Human
+source_project: External source (outside of HuBMAP) of the project, eg. HCA (The Human
   Cell Atlas Consortium).
 source_storage_time_unit: Time unit
 source_storage_time_value: The amount of time that elapsed between when the source
