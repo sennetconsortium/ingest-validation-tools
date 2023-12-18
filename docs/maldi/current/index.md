@@ -16,7 +16,7 @@ Related files:
 - [📝 TSV template](https://raw.githubusercontent.com/hubmapconsortium/dataset-metadata-spreadsheet/main/maldi/latest/maldi.tsv): Alternative for metadata entry.
 
 
-
+[This link](https://docs.google.com/spreadsheets/d/1YnmdTAA0Z9MKN3OjR3Sca8pz-LNQll91wdQoRPSP6Q4/edit#gid=0) lists the set of fields that are required in the OME TIFF file XML header.
 
 ## Metadata schema
 
@@ -28,5 +28,22 @@ Related files:
 <br>
 
 ## Directory schemas
-<summary><a href="https://docs.google.com/spreadsheets/d/1I2aXIpOQHBjeLbKsVn0qJTOH7vtByeQ9t_1EnlTAPL4"><b>Version 2 (use this one)</b> (draft - submission of data prepared using this schema will be supported by Sept. 30) </a></summary>
+<summary><b>Version 2 (use this one)</b></summary>
+
+| pattern | required? | description |
+| --- | --- | --- |
+| <code>extras\/.*</code> | ✓ | Folder for general lab-specific files related to the dataset. |
+| <code>extras\/mass-spec_environment\.(?:json&#124;tsv)</code> |  | JSON or TSV file containing the machine parameters/settings. This is akin to the microscope_environment.json file that's used to describe the imaging equipment. |
+| <code>raw\/.*</code> | ✓ | Raw data files for the experiment. |
+| <code>raw\/imzML\/.*</code> | ✓ | Raw mass spec data. |
+| <code>raw\/imzML\/[^\/]+\.ibd</code> | ✓ | Mass spec data saved in a binary format. |
+| <code>raw\/imzML\/[^\/]+\.imzML</code> | ✓ | Mass spec metadata saved in XML format. Index to .ibd file. |
+| <code>lab_processed\/.*</code> | ✓ | Experiment files that were processed by the lab generating the data. |
+| <code>lab_processed\/images\/.*</code> | ✓ | Processed image files |
+| <code>lab_processed\/images\/[^\/]+\.ome\.tiff</code> | ✓ | OME-TIFF files (multichannel, multi-layered) produced by the microscopy experiment. If compressed, must use loss-less compression algorithm. See the following link for the set of fields that are required in the OME TIFF file XML header. <https://docs.google.com/spreadsheets/d/1YnmdTAA0Z9MKN3OjR3Sca8pz-LNQll91wdQoRPSP6Q4/edit#gid=0> |
+| <code>lab_processed\/images\/[^\/]*ome-tiff\.channels\.csv</code> | ✓ | This file provides essential documentation pertaining to each channel of the accommpanying OME TIFF. The file should contain one row per OME TIFF channel. The required fields are detailed <https://docs.google.com/spreadsheets/d/1xEJSb0xn5C5fB3k62pj1CyHNybpt4-YtvUs5SUMS44o/edit#gid=0> |
+| <code>lab_processed\/transformations\/.*</code> |  | Directory containing image transformations. |
+| <code>lab_processed\/transformations\/[^\/]+\.txt</code> |  | Transformations/map back to autofluorescence microscopy (related) data |
+| <code>lab_processed\/annotations\/.*</code> | ✓ | Directory containing annotations |
+| <code>lab_processed\/annotations\/[^\/]+_MolecularAssignments\.tsv</code> | ✓ | TSV file containing the m/z, molecular assignment, etc. |
 

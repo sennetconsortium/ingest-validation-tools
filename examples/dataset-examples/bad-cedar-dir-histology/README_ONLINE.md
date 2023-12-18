@@ -10,18 +10,14 @@ Upload Errors:
         - not-allowed.
         Required but missing:
         - extras\/.*.
+        - extras\/microscope_hardware\.json.
         - lab_processed\/.*.
-        - lab_processed\/annotations\/[^\/]+-objects\.csv.
-        - lab_processed\/annotations\/[^\/]+\.segmentations\.ome\.tiff.
-        - lab_processed\/annotations\/segmentation-masks\.csv.
         - lab_processed\/images\/.*.
-        - lab_processed\/images\/[^\/]+\.ome-tiff\.channels\.csv.
+        - lab_processed\/images\/[^\/]*ome-tiff\.channels\.csv.
         - lab_processed\/images\/[^\/]+\.ome\.tiff.
-        - microscope_hardware\.json.
         - raw\/.*.
         - raw\/images\/.*.
-        - raw\/images\/[^\/]+\.(?:scn|vsi|ndpi|svs|czi|tiff).
-        - raw\/images\/[^\/]+\.xml.
+        - raw\/images\/[^\/]+\.(?:xml|scn|vsi|ndpi|svs|czi|tiff).
 Reference Errors:
   No References:
     Files:
