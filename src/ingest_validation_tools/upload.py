@@ -635,7 +635,6 @@ class Upload:
         ref: str,
         schema_version: SchemaVersion,
         metadata_path: Union[str, Path],
-        is_cedar: bool = False,
     ) -> Optional[Dict]:
         # TODO: it's weird that this method does two wildly different things; fix
         errors: Dict[
@@ -649,8 +648,7 @@ class Upload:
             ref_errors = get_data_dir_errors(
                 schema_version.dir_schema,
                 path,
-                dataset_ignore_globs=self.dataset_ignore_globs,
-                is_cedar=is_cedar,
+                dataset_ignore_globs=self.dataset_ignore_globs
             )
             if ref_errors:
                 # TODO: quote field name to match TSV error output;
