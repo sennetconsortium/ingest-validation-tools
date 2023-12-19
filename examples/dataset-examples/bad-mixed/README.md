@@ -1,23 +1,23 @@
 ```
 Upload Errors:
   TSV Errors:
-    examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv row 2, column 'contributors_path':
-      File has no data rows: examples/dataset-examples/bad-mixed/upload/contributors.tsv.
-    examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv row 2, column 'antibodies_path':
-      File does not exist: examples/dataset-examples/bad-mixed/upload/antibodies.tsv.
-    examples/dataset-examples/bad-mixed/upload/scatacseq-metadata.tsv row 2, column 'contributors_path':
-      File has no data rows: examples/dataset-examples/bad-mixed/upload/contributors.tsv.
+    examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv, row 2, column 'contributors_path':
+    - 'File has no data rows: examples/dataset-examples/bad-mixed/upload/contributors.tsv.'
+    examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv, row 2, column 'antibodies_path':
+    - 'File does not exist: examples/dataset-examples/bad-mixed/upload/antibodies.tsv.'
+    examples/dataset-examples/bad-mixed/upload/scatacseq-metadata.tsv, row 2, column 'contributors_path':
+    - 'File has no data rows: examples/dataset-examples/bad-mixed/upload/contributors.tsv.'
   Directory Errors:
     examples/dataset-examples/bad-mixed/upload/codex-metadata.tsv, row 2, column data_path:
-      examples/dataset-examples/bad-mixed/upload/bad-shared-dataset (as codex-v0):
+      examples/dataset-examples/bad-mixed/upload/bad-shared-dataset (as codex-v1-with-dataset-json):
         Not allowed:
         - not-good-for-either-type.txt.
         Required but missing:
         - (processed|drv_[^/]*)/.*.
-        - (raw|processed)/config\.txt|(raw|src_[^/]*|drv_[^/]*)/[sS]egmentation\.json.
         - (raw|src_.*)/.*.
         - (raw|src_.*)/[cC]yc.*_reg.*/.*_Z.*_CH.*\.tif.
-        - (raw|src_[^/]*)/[Ee]xperiment\.json.
+        - (raw|src_[^/]*)/dataset\.json.
+        - extras/dir-schema-v1-with-dataset-json.
     examples/dataset-examples/bad-mixed/upload/scatacseq-metadata.tsv, row 2, column data_path:
       examples/dataset-examples/bad-mixed/upload/bad-shared-dataset (as scatacseq-v0):
         Not allowed:

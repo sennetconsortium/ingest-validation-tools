@@ -45,6 +45,39 @@
 - Fix to support display of errors for CEDAR template metadata
 - Bugfix for directory schema location
 - Bail earlier in validation if there are errors in metadata/dir/refs
+- Update Antibodies
+- Remove NanoSplits
+- Update hifi, mibi, imc
+- Fix imc-2d docs
+- Fix imc-2d dir docs
+- Add link to OME-Tiff docs
+- Remove WGS, CE-MS, GC-MS, and RNAseq (GeoMx)
+- Update histology and segmentation mask directory schemas
+- Update hifi-slide to hifi-slides
+- Fix changelog error
+- Fix CI
+- Update MIBI and IMC2D directory schemas
+- Fix to support display of errors for CEDAR template metadata
+- Upate Auto-fluorescence, Confocal, and Light Sheet directory schemas
+- Additional updates to next-gen histology directory schema
+- Implemented soft assay types/assayclassifier endpoint for canonical assay names and dir structures
+- Added mock response test data for offline testing
+- Add more assays
+- Correct Auto-fluorescence lab_processed/annotations path description
+- Add Visium with probes next-gen directory schema
+- Update MALDI, SIMS, DESI, Visium no probes, and HiFi-Slide directory schemas
+- Fix paths in Histology, MIBI, IMC2D, AF, Confocal, Light Sheet, and Visium with probes directory schemas
+- Add CODEX, Thick section Multiphoton MxIF, Second Harmonic Generation, and Enhanced Stimulated Raman Spectroscopy (SRS) next-gen directory schemas
+- Move Thick section Multiphoton MxIF next-gen directory schema to placeholder file
+- Update file path in Visium no probes, Histology, AF, MxIF, SHG, SRS, Confocal, Light Sheet, MALDI, SIMS, DESI
+- Remove Organ CEDAR page
+- Draft next-gen directory schema for SNARE-seq2
+- Added multi-assay support
+- Delete GeoMX
+- Update soft typing to use hyphen, not underscore
+- Add SNARE-seq2 and RNAseq with probes next-gen directory schema
+- Remove the draft tag from SNARE-seq2
+- Regenerate docs for SNARE-seq2
 
 ## v0.0.15 - 2023-04-04
 
