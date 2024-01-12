@@ -6,7 +6,17 @@
 - Added murine source spec
 - Removed regular expression contraints from library_adapter_sequence in snRNA-seq schema
 
-## v0.0.16 - in progress
+## v0.0.17 - in progress
+
+- Update atacseq cedar link
+- Add Phenocycler next-gen directory schema
+- Update Histology next-gen directory schema
+- Add LC-MS next-gen directory schema
+- Add GeoMx NGS next-gen directory schema
+- Update PhenoCycler and Histology to 2.2.0
+- Update CEDAR links for PhenoCycler & Histology
+
+## v0.0.16
 
 - add support for Publication type
 - updated issue templates.
