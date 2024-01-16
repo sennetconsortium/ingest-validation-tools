@@ -1001,7 +1001,6 @@ parent_id:
 - microct
 - mri
 - oct
-- phenocycler
 - publication
 - rnaseq
 - second-harmonic-generation
@@ -1012,8 +1011,6 @@ parent_id:
 - ultrasound
 - visium-with-probes
 - xenium
-parent_sample_id:
-- histology
 pathologist_report:
 - sample
 pathology_distance_unit:
