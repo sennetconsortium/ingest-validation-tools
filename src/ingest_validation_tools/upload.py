@@ -75,8 +75,8 @@ class Upload:
 
         if app_context is None:
             app_context = {
-                'entities_url': 'https://entity.api.hubmapconsortium.org/entities/',
-                'request_header': {'X-Hubmap-Application': 'ingest-pipeline'}
+                'entities_url': 'https://entity.api.sennetconsortium.org/entities/',
+                'request_header': {'X-SenNet-Application': 'ingest-pipeline'}
             }
         self.app_context = app_context
 
