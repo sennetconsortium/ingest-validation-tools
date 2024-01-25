@@ -5,6 +5,7 @@
 - Updated regex for `donor_id` and `tissue_id`
 - Added murine source spec
 - Removed regular expression contraints from library_adapter_sequence in snRNA-seq schema
+- Updated regex for Visium with probes directory schema
 
 ## v0.0.17 - in progress
 
